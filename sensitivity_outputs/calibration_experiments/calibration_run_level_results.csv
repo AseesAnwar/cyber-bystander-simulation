@@ -1,0 +1,901 @@
+scenario,harm_profile,role_profile,seed,initial_aggression,toxicity_level,profanity_level,identity_attack_level,like_influence,retweet_influence,instigator_pct,defender_pct,neutral_pct,other_pct,final_level,change,steps,outcome
+Very low harm + Protective majority,Very low harm,Protective majority,600,15,0,0,0,5,5,5,70,20,5,12.417910114782826,-2.582089885217174,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,601,15,0,0,0,5,5,5,70,20,5,15.557720010120603,0.5577200101206028,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,602,15,0,0,0,5,5,5,70,20,5,14.732217684315636,-0.2677823156843644,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,603,15,0,0,0,5,5,5,70,20,5,14.801952479468108,-0.19804752053189212,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,604,15,0,0,0,5,5,5,70,20,5,14.835921551485178,-0.16407844851482167,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,605,15,0,0,0,5,5,5,70,20,5,15.38936493241142,0.3893649324114197,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,606,15,0,0,0,5,5,5,70,20,5,11.674182254205636,-3.325817745794364,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,607,15,0,0,0,5,5,5,70,20,5,13.26128164023623,-1.7387183597637694,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,608,15,0,0,0,5,5,5,70,20,5,14.214339364171202,-0.7856606358287976,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,609,15,0,0,0,5,5,5,70,20,5,14.071035514552042,-0.928964485447958,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,610,15,0,0,0,5,5,5,70,20,5,12.626044812320167,-2.373955187679833,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,611,15,0,0,0,5,5,5,70,20,5,15.921557644496495,0.9215576444964952,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,612,15,0,0,0,5,5,5,70,20,5,12.897022101001507,-2.1029778989984926,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,613,15,0,0,0,5,5,5,70,20,5,15.319372972780327,0.31937297278032695,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,614,15,0,0,0,5,5,5,70,20,5,12.719851852026636,-2.280148147973364,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,615,15,0,0,0,5,5,5,70,20,5,14.485750905360764,-0.5142490946392364,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,616,15,0,0,0,5,5,5,70,20,5,14.81335971683037,-0.18664028316963055,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,617,15,0,0,0,5,5,5,70,20,5,15.473663959882892,0.47366395988289156,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,618,15,0,0,0,5,5,5,70,20,5,13.111526299709237,-1.8884737002907634,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,619,15,0,0,0,5,5,5,70,20,5,13.856172241365027,-1.1438277586349734,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,620,15,0,0,0,5,5,5,70,20,5,14.529729191617907,-0.470270808382093,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,621,15,0,0,0,5,5,5,70,20,5,14.663053947894625,-0.3369460521053753,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,622,15,0,0,0,5,5,5,70,20,5,15.292397908409553,0.29239790840955315,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,623,15,0,0,0,5,5,5,70,20,5,16.75905254649525,1.7590525464952513,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,624,15,0,0,0,5,5,5,70,20,5,14.214000431072703,-0.7859995689272967,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,625,15,0,0,0,5,5,5,70,20,5,14.909132596099933,-0.09086740390006653,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,626,15,0,0,0,5,5,5,70,20,5,12.674167097333452,-2.325832902666548,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,627,15,0,0,0,5,5,5,70,20,5,15.746596961825107,0.7465969618251069,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,628,15,0,0,0,5,5,5,70,20,5,16.66491164828717,1.6649116482871698,1,Calmed down
+Very low harm + Protective majority,Very low harm,Protective majority,629,15,0,0,0,5,5,5,70,20,5,14.811062048093898,-0.18893795190610163,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,600,15,0,0,0,5,5,15,55,25,5,12.417910114782826,-2.582089885217174,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,601,15,0,0,0,5,5,15,55,25,5,15.631448077108336,0.6314480771083364,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,602,15,0,0,0,5,5,15,55,25,5,16.065551017648968,1.0655510176489678,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,603,15,0,0,0,5,5,15,55,25,5,16.135285812801442,1.1352858128014418,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,604,15,0,0,0,5,5,15,55,25,5,14.835921551485178,-0.16407844851482167,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,605,15,0,0,0,5,5,15,55,25,5,15.38936493241142,0.3893649324114197,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,606,15,0,0,0,5,5,15,55,25,5,11.674182254205636,-3.325817745794364,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,607,15,0,0,0,5,5,15,55,25,5,15.241281640236231,0.241281640236231,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,608,15,0,0,0,5,5,15,55,25,5,14.214339364171202,-0.7856606358287976,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,609,15,0,0,0,5,5,15,55,25,5,14.071035514552042,-0.928964485447958,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,610,15,0,0,0,5,5,15,55,25,5,12.626044812320167,-2.373955187679833,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,611,15,0,0,0,5,5,15,55,25,5,14.062455872473127,-0.9375441275268734,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,612,15,0,0,0,5,5,15,55,25,5,12.897022101001507,-2.1029778989984926,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,613,15,0,0,0,5,5,15,55,25,5,13.77270630611366,-1.22729369388634,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,614,15,0,0,0,5,5,15,55,25,5,14.95318518535997,-0.04681481464002957,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,615,15,0,0,0,5,5,15,55,25,5,16.90642519743859,1.9064251974385904,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,616,15,0,0,0,5,5,15,55,25,5,14.81335971683037,-0.18664028316963055,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,617,15,0,0,0,5,5,15,55,25,5,15.473663959882892,0.47366395988289156,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,618,15,0,0,0,5,5,15,55,25,5,13.111526299709237,-1.8884737002907634,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,619,15,0,0,0,5,5,15,55,25,5,14.28950557469836,-0.7104944253016399,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,620,15,0,0,0,5,5,15,55,25,5,15.86306252495124,0.8630625249512391,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,621,15,0,0,0,5,5,15,55,25,5,14.663053947894625,-0.3369460521053753,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,622,15,0,0,0,5,5,15,55,25,5,15.99411020543354,0.9941102054335396,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,623,15,0,0,0,5,5,15,55,25,5,16.75905254649525,1.7590525464952513,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,624,15,0,0,0,5,5,15,55,25,5,14.214000431072703,-0.7859995689272967,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,625,15,0,0,0,5,5,15,55,25,5,14.909132596099933,-0.09086740390006653,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,626,15,0,0,0,5,5,15,55,25,5,14.007500430666784,-0.9924995693332157,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,627,15,0,0,0,5,5,15,55,25,5,15.746596961825107,0.7465969618251069,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,628,15,0,0,0,5,5,15,55,25,5,16.66491164828717,1.6649116482871698,1,Calmed down
+Very low harm + Defender leaning,Very low harm,Defender leaning,629,15,0,0,0,5,5,15,55,25,5,14.811062048093898,-0.18893795190610163,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,600,15,0,0,0,5,5,25,35,30,10,12.417910114782826,-2.582089885217174,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,601,15,0,0,0,5,5,25,35,30,10,15.631448077108336,0.6314480771083364,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,602,15,0,0,0,5,5,25,35,30,10,14.51451576654861,-0.48548423345138936,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,603,15,0,0,0,5,5,25,35,30,10,16.850417636227807,1.8504176362278066,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,604,15,0,0,0,5,5,25,35,30,10,14.835921551485178,-0.16407844851482167,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,605,15,0,0,0,5,5,25,35,30,10,16.28936493241142,1.28936493241142,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,606,15,0,0,0,5,5,25,35,30,10,14.807515587538969,-0.19248441246103098,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,607,15,0,0,0,5,5,25,35,30,10,15.241281640236231,0.241281640236231,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,608,15,0,0,0,5,5,25,35,30,10,15.547672697504535,0.5476726975045345,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,609,15,0,0,0,5,5,25,35,30,10,16.11148434236604,1.1114843423660403,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,610,15,0,0,0,5,5,25,35,30,10,13.9593781456535,-1.0406218543464991,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,611,15,0,0,0,5,5,25,35,30,10,17.254890977829827,2.2548909778298274,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,612,15,0,0,0,5,5,25,35,30,10,13.797022101001508,-1.2029778989984923,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,613,15,0,0,0,5,5,25,35,30,10,14.67270630611366,-0.32729369388633955,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,614,15,0,0,0,5,5,25,35,30,10,16.286518518693303,1.2865185186933026,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,615,15,0,0,0,5,5,25,35,30,10,17.593091864105258,2.593091864105258,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,616,15,0,0,0,5,5,25,35,30,10,15.93335971683037,0.9333597168303704,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,617,15,0,0,0,5,5,25,35,30,10,14.594687183219882,-0.40531281678011766,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,618,15,0,0,0,5,5,25,35,30,10,14.011526299709237,-0.9884737002907631,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,619,15,0,0,0,5,5,25,35,30,10,15.876172241365026,0.8761722413650261,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,620,15,0,0,0,5,5,25,35,30,10,15.39850997074281,0.39850997074280947,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,621,15,0,0,0,5,5,25,35,30,10,14.663053947894625,-0.3369460521053753,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,622,15,0,0,0,5,5,25,35,30,10,16.89411020543354,1.8941102054335417,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,623,15,0,0,0,5,5,25,35,30,10,17.192385879828585,2.192385879828585,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,624,15,0,0,0,5,5,25,35,30,10,15.81442918685667,0.8144291868566693,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,625,15,0,0,0,5,5,25,35,30,10,15.809132596099934,0.8091325960999338,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,626,15,0,0,0,5,5,25,35,30,10,16.42664108359711,1.4266410835971115,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,627,15,0,0,0,5,5,25,35,30,10,15.533263628491774,0.533263628491774,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,628,15,0,0,0,5,5,25,35,30,10,17.998244981620505,2.9982449816205055,1,Calmed down
+Very low harm + Balanced discussion,Very low harm,Balanced discussion,629,15,0,0,0,5,5,25,35,30,10,16.173889586954214,1.173889586954214,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,600,15,0,0,0,5,5,15,20,55,10,16.45124344811616,1.4512434481161591,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,601,15,0,0,0,5,5,15,20,55,10,15.631448077108336,0.6314480771083364,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,602,15,0,0,0,5,5,15,20,55,10,16.96555101764897,1.96555101764897,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,603,15,0,0,0,5,5,15,20,55,10,16.850417636227807,1.8504176362278066,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,604,15,0,0,0,5,5,15,20,55,10,15.753915016464271,0.753915016464271,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,605,15,0,0,0,5,5,15,20,55,10,16.28936493241142,1.28936493241142,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,606,15,0,0,0,5,5,15,20,55,10,14.807515587538969,-0.19248441246103098,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,607,15,0,0,0,5,5,15,20,55,10,17.04128164023623,2.0412816402362317,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,608,15,0,0,0,5,5,15,20,55,10,15.900360064234146,0.900360064234146,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,609,15,0,0,0,5,5,15,20,55,10,15.404368847885376,0.40436884788537597,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,610,15,0,0,0,5,5,15,20,55,10,13.9593781456535,-1.0406218543464991,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,611,15,0,0,0,5,5,15,20,55,10,14.962455872473125,-0.03754412752687486,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,612,15,0,0,0,5,5,15,20,55,10,13.797022101001508,-1.2029778989984923,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,613,15,0,0,0,5,5,15,20,55,10,15.572706306113659,0.572706306113659,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,614,15,0,0,0,5,5,15,20,55,10,15.85318518535997,0.8531851853599708,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,615,15,0,0,0,5,5,15,20,55,10,15.39241757202743,0.3924175720274299,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,616,15,0,0,0,5,5,15,20,55,10,18.166693050163705,3.1666930501637047,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,617,15,0,0,0,5,5,15,20,55,10,15.260330626549559,0.26033062654955863,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,618,15,0,0,0,5,5,15,20,55,10,14.48944885990973,-0.5105511400902696,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,619,15,0,0,0,5,5,15,20,55,10,16.08950557469836,1.0895055746983608,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,620,15,0,0,0,5,5,15,20,55,10,15.39850997074281,0.39850997074280947,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,621,15,0,0,0,5,5,15,20,55,10,16.439610042727644,1.4396100427276437,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,622,15,0,0,0,5,5,15,20,55,10,16.89411020543354,1.8941102054335417,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,623,15,0,0,0,5,5,15,20,55,10,17.192385879828585,2.192385879828585,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,624,15,0,0,0,5,5,15,20,55,10,15.663789963924945,0.6637899639249447,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,625,15,0,0,0,5,5,15,20,55,10,16.709132596099934,1.7091325960999342,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,626,15,0,0,0,5,5,15,20,55,10,14.007500430666784,-0.9924995693332157,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,627,15,0,0,0,5,5,15,20,55,10,16.075894288503846,1.0758942885038465,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,628,15,0,0,0,5,5,15,20,55,10,16.66491164828717,1.6649116482871698,1,Calmed down
+Very low harm + Silent majority,Very low harm,Silent majority,629,15,0,0,0,5,5,15,20,55,10,15.711062048093899,0.7110620480938987,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,600,15,0,0,0,5,5,45,20,25,10,15.084576781449492,0.08457678144949199,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,601,15,0,0,0,5,5,45,20,25,10,15.631448077108336,0.6314480771083364,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,602,15,0,0,0,5,5,45,20,25,10,16.38600309054619,1.3860030905461898,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,603,15,0,0,0,5,5,45,20,25,10,16.781952479468107,1.7819524794681065,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,604,15,0,0,0,5,5,45,20,25,10,16.16925488481851,1.1692548848185105,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,605,15,0,0,0,5,5,45,20,25,10,17.001280168876246,2.001280168876246,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,606,15,0,0,0,5,5,45,20,25,10,14.807515587538969,-0.19248441246103098,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,607,15,0,0,0,5,5,45,20,25,10,18.25290360026911,3.2529036002691107,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,608,15,0,0,0,5,5,45,20,25,10,17.21072190377698,2.2107219037769816,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,609,15,0,0,0,5,5,45,20,25,10,14.551021403229939,-0.44897859677006124,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,610,15,0,0,0,5,5,45,20,25,10,14.6470465715195,-0.35295342848050026,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,611,15,0,0,0,5,5,45,20,25,10,18.062455872473127,3.0624558724731266,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,612,15,0,0,0,5,5,45,20,25,10,16.02747193889286,1.0274719388928588,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,613,15,0,0,0,5,5,45,20,25,10,15.106039639446994,0.10603963944699402,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,614,15,0,0,0,5,5,45,20,25,10,17.61985185202664,2.6198518520266383,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,615,15,0,0,0,5,5,45,20,25,10,16.90642519743859,1.9064251974385904,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,616,15,0,0,0,5,5,45,20,25,10,15.93335971683037,0.9333597168303704,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,617,15,0,0,0,5,5,45,20,25,10,14.594687183219882,-0.40531281678011766,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,618,15,0,0,0,5,5,45,20,25,10,14.011526299709237,-0.9884737002907631,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,619,15,0,0,0,5,5,45,20,25,10,16.522838908031694,1.5228389080316944,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,620,15,0,0,0,5,5,45,20,25,10,17.196395858284575,2.196395858284575,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,621,15,0,0,0,5,5,45,20,25,10,14.663053947894625,-0.3369460521053753,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,622,15,0,0,0,5,5,45,20,25,10,17.540776872100206,2.5407768721002064,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,623,15,0,0,0,5,5,45,20,25,10,16.75905254649525,1.7590525464952513,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,624,15,0,0,0,5,5,45,20,25,10,16.35092005684737,1.3509200568473716,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,625,15,0,0,0,5,5,45,20,25,10,17.142465929433268,2.1424659294332677,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,626,15,0,0,0,5,5,45,20,25,10,18.193307750263777,3.1933077502637772,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,627,15,0,0,0,5,5,45,20,25,10,16.866596961825106,1.8665969618251061,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,628,15,0,0,0,5,5,45,20,25,10,18.049855834732973,3.0498558347329734,1,Calmed down
+Very low harm + Bully-support leaning,Very low harm,Bully-support leaning,629,15,0,0,0,5,5,45,20,25,10,15.273889586954212,0.27388958695421195,1,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,600,25,10,5,5,10,10,5,70,20,5,18.489744481450973,-6.510255518549027,6,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,601,25,10,5,5,10,10,5,70,20,5,19.163919505205747,-5.836080494794253,8,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,602,25,10,5,5,10,10,5,70,20,5,57.928744221915714,32.928744221915714,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,603,25,10,5,5,10,10,5,70,20,5,17.04394803316292,-7.95605196683708,4,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,604,25,10,5,5,10,10,5,70,20,5,55.47570434526313,30.475704345263132,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,605,25,10,5,5,10,10,5,70,20,5,19.582836569294763,-5.417163430705237,10,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,606,25,10,5,5,10,10,5,70,20,5,19.941388116579237,-5.058611883420763,6,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,607,25,10,5,5,10,10,5,70,20,5,18.841002006095813,-6.158997993904187,11,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,608,25,10,5,5,10,10,5,70,20,5,18.188455510295995,-6.811544489704005,6,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,609,25,10,5,5,10,10,5,70,20,5,56.31190378579042,31.31190378579042,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,610,25,10,5,5,10,10,5,70,20,5,17.819000799904945,-7.180999200095055,10,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,611,25,10,5,5,10,10,5,70,20,5,19.178057767864864,-5.821942232135136,5,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,612,25,10,5,5,10,10,5,70,20,5,19.573635018528922,-5.426364981471078,3,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,613,25,10,5,5,10,10,5,70,20,5,61.30515019686082,36.30515019686082,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,614,25,10,5,5,10,10,5,70,20,5,17.263483930663465,-7.736516069336535,5,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,615,25,10,5,5,10,10,5,70,20,5,18.896053768067837,-6.103946231932163,5,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,616,25,10,5,5,10,10,5,70,20,5,19.66362213464046,-5.336377865359541,13,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,617,25,10,5,5,10,10,5,70,20,5,18.261690379026586,-6.738309620973414,5,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,618,25,10,5,5,10,10,5,70,20,5,18.92048851635364,-6.07951148364636,7,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,619,25,10,5,5,10,10,5,70,20,5,18.96798341042263,-6.0320165895773705,9,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,620,25,10,5,5,10,10,5,70,20,5,55.80405168394986,30.804051683949858,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,621,25,10,5,5,10,10,5,70,20,5,18.80556317882611,-6.194436821173891,15,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,622,25,10,5,5,10,10,5,70,20,5,18.869921619101284,-6.130078380898716,8,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,623,25,10,5,5,10,10,5,70,20,5,19.901186187315073,-5.098813812684927,7,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,624,25,10,5,5,10,10,5,70,20,5,55.57654765425815,30.57654765425815,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,625,25,10,5,5,10,10,5,70,20,5,18.872888874267545,-6.127111125732455,9,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,626,25,10,5,5,10,10,5,70,20,5,18.547310234280463,-6.452689765719537,3,Calmed down
+Low harm + Protective majority,Low harm,Protective majority,627,25,10,5,5,10,10,5,70,20,5,49.955749396479945,24.955749396479945,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,628,25,10,5,5,10,10,5,70,20,5,60.70334712197519,35.70334712197519,18,Stayed unresolved
+Low harm + Protective majority,Low harm,Protective majority,629,25,10,5,5,10,10,5,70,20,5,16.569930730059664,-8.430069269940336,6,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,600,25,10,5,5,10,10,15,55,25,5,21.773864852397722,-3.226135147602278,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,601,25,10,5,5,10,10,15,55,25,5,19.259063229192385,-5.740936770807615,18,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,602,25,10,5,5,10,10,15,55,25,5,36.035066079724814,11.035066079724814,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,603,25,10,5,5,10,10,15,55,25,5,19.90249956477378,-5.09750043522622,6,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,604,25,10,5,5,10,10,15,55,25,5,71.43421758463721,46.43421758463721,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,605,25,10,5,5,10,10,15,55,25,5,70.48353760641601,45.48353760641601,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,606,25,10,5,5,10,10,15,55,25,5,19.66345216658335,-5.336547833416649,9,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,607,25,10,5,5,10,10,15,55,25,5,62.708325700406135,37.708325700406135,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,608,25,10,5,5,10,10,15,55,25,5,77.26865464025678,52.268654640256784,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,609,25,10,5,5,10,10,15,55,25,5,80.11779990607835,55.117799906078346,18,Got worse
+Low harm + Defender leaning,Low harm,Defender leaning,610,25,10,5,5,10,10,15,55,25,5,24.63434152187319,-0.36565847812681085,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,611,25,10,5,5,10,10,15,55,25,5,18.531693838410703,-6.468306161589297,5,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,612,25,10,5,5,10,10,15,55,25,5,62.55655880185007,37.55655880185007,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,613,25,10,5,5,10,10,15,55,25,5,51.68441859759936,26.68441859759936,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,614,25,10,5,5,10,10,15,55,25,5,57.17798544699268,32.17798544699268,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,615,25,10,5,5,10,10,15,55,25,5,81.52720590889108,56.52720590889108,18,Got worse
+Low harm + Defender leaning,Low harm,Defender leaning,616,25,10,5,5,10,10,15,55,25,5,80.78839489304218,55.78839489304218,18,Got worse
+Low harm + Defender leaning,Low harm,Defender leaning,617,25,10,5,5,10,10,15,55,25,5,19.734411092860746,-5.265588907139254,16,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,618,25,10,5,5,10,10,15,55,25,5,51.40493265545844,26.40493265545844,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,619,25,10,5,5,10,10,15,55,25,5,82.20504080636034,57.205040806360344,17,Got worse
+Low harm + Defender leaning,Low harm,Defender leaning,620,25,10,5,5,10,10,15,55,25,5,77.42864506969904,52.428645069699044,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,621,25,10,5,5,10,10,15,55,25,5,81.19558642749335,56.19558642749335,17,Got worse
+Low harm + Defender leaning,Low harm,Defender leaning,622,25,10,5,5,10,10,15,55,25,5,19.337689857074867,-5.662310142925133,11,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,623,25,10,5,5,10,10,15,55,25,5,18.99106737433045,-6.008932625669551,13,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,624,25,10,5,5,10,10,15,55,25,5,53.177125246002205,28.177125246002205,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,625,25,10,5,5,10,10,15,55,25,5,66.0841867421541,41.0841867421541,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,626,25,10,5,5,10,10,15,55,25,5,75.09172877585976,50.091728775859764,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,627,25,10,5,5,10,10,15,55,25,5,61.725309753351965,36.725309753351965,18,Stayed unresolved
+Low harm + Defender leaning,Low harm,Defender leaning,628,25,10,5,5,10,10,15,55,25,5,18.080359583389736,-6.919640416610264,15,Calmed down
+Low harm + Defender leaning,Low harm,Defender leaning,629,25,10,5,5,10,10,15,55,25,5,19.981549957245832,-5.018450042754168,18,Calmed down
+Low harm + Balanced discussion,Low harm,Balanced discussion,600,25,10,5,5,10,10,25,35,30,10,37.689995468744485,12.689995468744485,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,601,25,10,5,5,10,10,25,35,30,10,87.60186288942414,62.60186288942414,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,602,25,10,5,5,10,10,25,35,30,10,81.84753676332899,56.84753676332899,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,603,25,10,5,5,10,10,25,35,30,10,69.57388666100266,44.57388666100266,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,604,25,10,5,5,10,10,25,35,30,10,81.3936731616683,56.3936731616683,17,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,605,25,10,5,5,10,10,25,35,30,10,78.22923866582815,53.22923866582815,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,606,25,10,5,5,10,10,25,35,30,10,83.74552729476271,58.74552729476271,16,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,607,25,10,5,5,10,10,25,35,30,10,72.60613789121767,47.60613789121767,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,608,25,10,5,5,10,10,25,35,30,10,82.55551484355371,57.55551484355371,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,609,25,10,5,5,10,10,25,35,30,10,81.06435916888893,56.06435916888893,17,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,610,25,10,5,5,10,10,25,35,30,10,62.54860316284216,37.54860316284216,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,611,25,10,5,5,10,10,25,35,30,10,81.512928232654,56.512928232654005,16,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,612,25,10,5,5,10,10,25,35,30,10,72.87698678575431,47.87698678575431,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,613,25,10,5,5,10,10,25,35,30,10,51.28508736484345,26.28508736484345,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,614,25,10,5,5,10,10,25,35,30,10,84.7305680777218,59.7305680777218,16,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,615,25,10,5,5,10,10,25,35,30,10,80.88792336379512,55.887923363795124,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,616,25,10,5,5,10,10,25,35,30,10,82.92445339833999,57.92445339833999,17,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,617,25,10,5,5,10,10,25,35,30,10,73.68545849604635,48.68545849604635,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,618,25,10,5,5,10,10,25,35,30,10,67.3677504651578,42.3677504651578,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,619,25,10,5,5,10,10,25,35,30,10,80.215928420867,55.215928420867,17,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,620,25,10,5,5,10,10,25,35,30,10,80.87149177686027,55.87149177686027,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,621,25,10,5,5,10,10,25,35,30,10,70.62305776898941,45.62305776898941,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,622,25,10,5,5,10,10,25,35,30,10,65.5291069161279,40.5291069161279,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,623,25,10,5,5,10,10,25,35,30,10,29.52745916550819,4.527459165508191,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,624,25,10,5,5,10,10,25,35,30,10,82.30108250190175,57.301082501901746,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,625,25,10,5,5,10,10,25,35,30,10,81.75476247672552,56.75476247672552,16,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,626,25,10,5,5,10,10,25,35,30,10,84.21136117439409,59.211361174394085,18,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,627,25,10,5,5,10,10,25,35,30,10,77.58956414949186,52.58956414949186,18,Stayed unresolved
+Low harm + Balanced discussion,Low harm,Balanced discussion,628,25,10,5,5,10,10,25,35,30,10,81.76644814840387,56.76644814840387,17,Got worse
+Low harm + Balanced discussion,Low harm,Balanced discussion,629,25,10,5,5,10,10,25,35,30,10,80.38002103461585,55.38002103461585,14,Got worse
+Low harm + Silent majority,Low harm,Silent majority,600,25,10,5,5,10,10,15,20,55,10,73.2752368880939,48.2752368880939,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,601,25,10,5,5,10,10,15,20,55,10,71.47635568579842,46.476355685798424,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,602,25,10,5,5,10,10,15,20,55,10,80.18064336158446,55.18064336158446,16,Got worse
+Low harm + Silent majority,Low harm,Silent majority,603,25,10,5,5,10,10,15,20,55,10,81.44749465377843,56.447494653778435,16,Got worse
+Low harm + Silent majority,Low harm,Silent majority,604,25,10,5,5,10,10,15,20,55,10,68.38951591100547,43.389515911005475,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,605,25,10,5,5,10,10,15,20,55,10,74.7271303634255,49.7271303634255,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,606,25,10,5,5,10,10,15,20,55,10,78.79176670078206,53.79176670078206,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,607,25,10,5,5,10,10,15,20,55,10,66.99785867876842,41.997858678768424,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,608,25,10,5,5,10,10,15,20,55,10,78.99286907369108,53.99286907369108,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,609,25,10,5,5,10,10,15,20,55,10,69.91874217393011,44.91874217393011,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,610,25,10,5,5,10,10,15,20,55,10,78.81176975946497,53.811769759464966,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,611,25,10,5,5,10,10,15,20,55,10,75.47279653864396,50.47279653864396,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,612,25,10,5,5,10,10,15,20,55,10,65.92361374123263,40.92361374123263,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,613,25,10,5,5,10,10,15,20,55,10,20.292866592209094,-4.707133407790906,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,614,25,10,5,5,10,10,15,20,55,10,74.59186729451487,49.59186729451487,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,615,25,10,5,5,10,10,15,20,55,10,56.713073198246725,31.713073198246725,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,616,25,10,5,5,10,10,15,20,55,10,79.43070097334645,54.43070097334645,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,617,25,10,5,5,10,10,15,20,55,10,63.49992774898815,38.49992774898815,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,618,25,10,5,5,10,10,15,20,55,10,83.55037141284933,58.55037141284933,18,Got worse
+Low harm + Silent majority,Low harm,Silent majority,619,25,10,5,5,10,10,15,20,55,10,80.16155650429565,55.161556504295646,18,Got worse
+Low harm + Silent majority,Low harm,Silent majority,620,25,10,5,5,10,10,15,20,55,10,83.0480216219736,58.048021621973604,17,Got worse
+Low harm + Silent majority,Low harm,Silent majority,621,25,10,5,5,10,10,15,20,55,10,20.33816957603479,-4.66183042396521,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,622,25,10,5,5,10,10,15,20,55,10,81.20262287716861,56.20262287716861,18,Got worse
+Low harm + Silent majority,Low harm,Silent majority,623,25,10,5,5,10,10,15,20,55,10,81.21746897850683,56.21746897850683,17,Got worse
+Low harm + Silent majority,Low harm,Silent majority,624,25,10,5,5,10,10,15,20,55,10,64.49572425279227,39.49572425279227,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,625,25,10,5,5,10,10,15,20,55,10,82.76579768831532,57.76579768831532,17,Got worse
+Low harm + Silent majority,Low harm,Silent majority,626,25,10,5,5,10,10,15,20,55,10,83.19496970235176,58.194969702351756,18,Got worse
+Low harm + Silent majority,Low harm,Silent majority,627,25,10,5,5,10,10,15,20,55,10,54.77402749345948,29.774027493459478,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,628,25,10,5,5,10,10,15,20,55,10,77.88570675263863,52.885706752638626,18,Stayed unresolved
+Low harm + Silent majority,Low harm,Silent majority,629,25,10,5,5,10,10,15,20,55,10,60.47600963072817,35.47600963072817,18,Stayed unresolved
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,600,25,10,5,5,10,10,45,20,25,10,84.83340855237245,59.83340855237245,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,601,25,10,5,5,10,10,45,20,25,10,80.73882258384833,55.73882258384833,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,602,25,10,5,5,10,10,45,20,25,10,84.19787826490801,59.19787826490801,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,603,25,10,5,5,10,10,45,20,25,10,82.789296523706,57.789296523706,12,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,604,25,10,5,5,10,10,45,20,25,10,85.56201284537491,60.56201284537491,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,605,25,10,5,5,10,10,45,20,25,10,82.76410606937789,57.76410606937789,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,606,25,10,5,5,10,10,45,20,25,10,80.45469334473702,55.454693344737024,15,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,607,25,10,5,5,10,10,45,20,25,10,85.54520339378098,60.54520339378098,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,608,25,10,5,5,10,10,45,20,25,10,81.13371653500015,56.13371653500015,11,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,609,25,10,5,5,10,10,45,20,25,10,83.37708454748733,58.37708454748733,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,610,25,10,5,5,10,10,45,20,25,10,80.3562596873486,55.3562596873486,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,611,25,10,5,5,10,10,45,20,25,10,85.88055846998661,60.88055846998661,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,612,25,10,5,5,10,10,45,20,25,10,81.2987262133023,56.2987262133023,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,613,25,10,5,5,10,10,45,20,25,10,87.31839986580073,62.31839986580073,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,614,25,10,5,5,10,10,45,20,25,10,80.46322556243372,55.46322556243372,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,615,25,10,5,5,10,10,45,20,25,10,82.62940579422224,57.62940579422224,12,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,616,25,10,5,5,10,10,45,20,25,10,80.86085421919884,55.86085421919884,12,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,617,25,10,5,5,10,10,45,20,25,10,85.27096250710295,60.27096250710295,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,618,25,10,5,5,10,10,45,20,25,10,86.31080438967136,61.31080438967136,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,619,25,10,5,5,10,10,45,20,25,10,82.96231371659414,57.96231371659414,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,620,25,10,5,5,10,10,45,20,25,10,80.24475781011448,55.24475781011448,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,621,25,10,5,5,10,10,45,20,25,10,81.9378301396265,56.9378301396265,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,622,25,10,5,5,10,10,45,20,25,10,84.71608110787128,59.716081107871275,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,623,25,10,5,5,10,10,45,20,25,10,82.3986117101054,57.3986117101054,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,624,25,10,5,5,10,10,45,20,25,10,85.44316726494323,60.44316726494323,15,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,625,25,10,5,5,10,10,45,20,25,10,83.15648198515014,58.15648198515014,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,626,25,10,5,5,10,10,45,20,25,10,80.81398087694298,55.81398087694298,13,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,627,25,10,5,5,10,10,45,20,25,10,84.54642860848497,59.54642860848497,17,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,628,25,10,5,5,10,10,45,20,25,10,84.92505566894772,59.92505566894772,14,Got worse
+Low harm + Bully-support leaning,Low harm,Bully-support leaning,629,25,10,5,5,10,10,45,20,25,10,84.33737586537413,59.33737586537413,13,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,600,35,15,10,10,20,20,5,70,20,5,72.18117289457474,37.18117289457474,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,601,35,15,10,10,20,20,5,70,20,5,20.867295646293424,-14.132704353706576,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,602,35,15,10,10,20,20,5,70,20,5,18.65974338679941,-16.34025661320059,14,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,603,35,15,10,10,20,20,5,70,20,5,75.53518619218046,40.53518619218046,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,604,35,15,10,10,20,20,5,70,20,5,80.3832823851681,45.3832823851681,16,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,605,35,15,10,10,20,20,5,70,20,5,80.05274552259675,45.05274552259675,16,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,606,35,15,10,10,20,20,5,70,20,5,66.2125977164819,31.212597716481895,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,607,35,15,10,10,20,20,5,70,20,5,19.791826685226447,-15.208173314773553,10,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,608,35,15,10,10,20,20,5,70,20,5,80.93191673153757,45.93191673153757,14,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,609,35,15,10,10,20,20,5,70,20,5,34.192960273006825,-0.8070397269931746,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,610,35,15,10,10,20,20,5,70,20,5,81.22499110987641,46.22499110987641,15,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,611,35,15,10,10,20,20,5,70,20,5,19.094479169608825,-15.905520830391175,12,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,612,35,15,10,10,20,20,5,70,20,5,18.987901638965027,-16.012098361034973,15,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,613,35,15,10,10,20,20,5,70,20,5,75.21033629696252,40.210336296962524,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,614,35,15,10,10,20,20,5,70,20,5,80.29017093369848,45.29017093369848,15,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,615,35,15,10,10,20,20,5,70,20,5,81.98460182227464,46.98460182227464,16,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,616,35,15,10,10,20,20,5,70,20,5,81.73799109629239,46.73799109629239,16,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,617,35,15,10,10,20,20,5,70,20,5,21.399235685645948,-13.600764314354052,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,618,35,15,10,10,20,20,5,70,20,5,17.488254802073563,-17.511745197926437,15,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,619,35,15,10,10,20,20,5,70,20,5,81.7332927043718,46.733292704371806,13,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,620,35,15,10,10,20,20,5,70,20,5,81.50654510696948,46.50654510696948,17,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,621,35,15,10,10,20,20,5,70,20,5,83.37389250887408,48.37389250887408,13,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,622,35,15,10,10,20,20,5,70,20,5,81.59320045906591,46.59320045906591,17,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,623,35,15,10,10,20,20,5,70,20,5,85.50858388824838,50.50858388824838,16,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,624,35,15,10,10,20,20,5,70,20,5,74.380181016987,39.380181016986995,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,625,35,15,10,10,20,20,5,70,20,5,19.884738837272298,-15.115261162727702,18,Calmed down
+Mild harm + Protective majority,Mild harm,Protective majority,626,35,15,10,10,20,20,5,70,20,5,30.729747685424915,-4.270252314575085,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,627,35,15,10,10,20,20,5,70,20,5,82.12796194014346,47.127961940143464,15,Got worse
+Mild harm + Protective majority,Mild harm,Protective majority,628,35,15,10,10,20,20,5,70,20,5,75.36577843242135,40.36577843242135,18,Stayed unresolved
+Mild harm + Protective majority,Mild harm,Protective majority,629,35,15,10,10,20,20,5,70,20,5,74.93437815267258,39.93437815267258,18,Stayed unresolved
+Mild harm + Defender leaning,Mild harm,Defender leaning,600,35,15,10,10,20,20,15,55,25,5,80.23632049749173,45.23632049749173,13,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,601,35,15,10,10,20,20,15,55,25,5,83.53733123656977,48.53733123656977,12,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,602,35,15,10,10,20,20,15,55,25,5,81.80717661682091,46.80717661682091,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,603,35,15,10,10,20,20,15,55,25,5,81.46935301899983,46.469353018999826,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,604,35,15,10,10,20,20,15,55,25,5,83.31218816943687,48.312188169436865,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,605,35,15,10,10,20,20,15,55,25,5,81.42904847065014,46.429048470650145,15,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,606,35,15,10,10,20,20,15,55,25,5,80.3081704072138,45.308170407213794,16,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,607,35,15,10,10,20,20,15,55,25,5,81.88421920187649,46.88421920187649,12,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,608,35,15,10,10,20,20,15,55,25,5,81.87655337276566,46.876553372765656,11,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,609,35,15,10,10,20,20,15,55,25,5,80.3157963087975,45.3157963087975,13,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,610,35,15,10,10,20,20,15,55,25,5,84.64423310215255,49.644233102152555,12,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,611,35,15,10,10,20,20,15,55,25,5,26.514336053444207,-8.485663946555793,18,Stayed unresolved
+Mild harm + Defender leaning,Mild harm,Defender leaning,612,35,15,10,10,20,20,15,55,25,5,84.17187002234891,49.17187002234891,15,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,613,35,15,10,10,20,20,15,55,25,5,81.4970665032697,46.49706650326971,16,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,614,35,15,10,10,20,20,15,55,25,5,70.09358406313088,35.093584063130876,18,Stayed unresolved
+Mild harm + Defender leaning,Mild harm,Defender leaning,615,35,15,10,10,20,20,15,55,25,5,80.69931147969449,45.69931147969449,12,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,616,35,15,10,10,20,20,15,55,25,5,80.47351537802984,45.473515378029845,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,617,35,15,10,10,20,20,15,55,25,5,74.20297378993106,39.202973789931065,18,Stayed unresolved
+Mild harm + Defender leaning,Mild harm,Defender leaning,618,35,15,10,10,20,20,15,55,25,5,81.80183076025722,46.80183076025722,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,619,35,15,10,10,20,20,15,55,25,5,82.05545677104065,47.05545677104065,13,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,620,35,15,10,10,20,20,15,55,25,5,81.63679196471848,46.63679196471848,12,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,621,35,15,10,10,20,20,15,55,25,5,81.93415709717347,46.93415709717347,11,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,622,35,15,10,10,20,20,15,55,25,5,82.79556736149871,47.79556736149871,13,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,623,35,15,10,10,20,20,15,55,25,5,41.1902364515213,6.190236451521301,18,Stayed unresolved
+Mild harm + Defender leaning,Mild harm,Defender leaning,624,35,15,10,10,20,20,15,55,25,5,80.34153725118266,45.34153725118266,15,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,625,35,15,10,10,20,20,15,55,25,5,86.77803920020607,51.77803920020607,15,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,626,35,15,10,10,20,20,15,55,25,5,84.30462498972298,49.30462498972298,15,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,627,35,15,10,10,20,20,15,55,25,5,84.45176538169243,49.451765381692425,14,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,628,35,15,10,10,20,20,15,55,25,5,83.36405625843626,48.364056258436264,18,Got worse
+Mild harm + Defender leaning,Mild harm,Defender leaning,629,35,15,10,10,20,20,15,55,25,5,84.78220365385151,49.78220365385151,16,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,600,35,15,10,10,20,20,25,35,30,10,84.75956689559688,49.759566895596876,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,601,35,15,10,10,20,20,25,35,30,10,80.32779910272734,45.32779910272734,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,602,35,15,10,10,20,20,25,35,30,10,82.33532046979781,47.33532046979781,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,603,35,15,10,10,20,20,25,35,30,10,82.46945654028973,47.46945654028973,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,604,35,15,10,10,20,20,25,35,30,10,83.67448395218592,48.67448395218592,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,605,35,15,10,10,20,20,25,35,30,10,85.8754353930667,50.875435393066695,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,606,35,15,10,10,20,20,25,35,30,10,82.74881155374932,47.74881155374932,10,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,607,35,15,10,10,20,20,25,35,30,10,81.5613983664319,46.5613983664319,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,608,35,15,10,10,20,20,25,35,30,10,83.07605060490565,48.076050604905646,11,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,609,35,15,10,10,20,20,25,35,30,10,81.08948666932012,46.089486669320124,15,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,610,35,15,10,10,20,20,25,35,30,10,84.16079020473732,49.160790204737324,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,611,35,15,10,10,20,20,25,35,30,10,82.5423647808746,47.54236478087461,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,612,35,15,10,10,20,20,25,35,30,10,84.26689835648442,49.26689835648442,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,613,35,15,10,10,20,20,25,35,30,10,84.52018287824357,49.520182878243574,18,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,614,35,15,10,10,20,20,25,35,30,10,81.71636235707243,46.71636235707243,11,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,615,35,15,10,10,20,20,25,35,30,10,84.30816692225108,49.308166922251075,11,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,616,35,15,10,10,20,20,25,35,30,10,84.48889689766195,49.488896897661945,11,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,617,35,15,10,10,20,20,25,35,30,10,80.48221204693162,45.48221204693162,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,618,35,15,10,10,20,20,25,35,30,10,84.55453886903713,49.55453886903713,15,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,619,35,15,10,10,20,20,25,35,30,10,82.65241287382982,47.65241287382982,11,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,620,35,15,10,10,20,20,25,35,30,10,82.67608081265237,47.67608081265237,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,621,35,15,10,10,20,20,25,35,30,10,82.98264340956338,47.98264340956338,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,622,35,15,10,10,20,20,25,35,30,10,80.48812561976499,45.488125619764986,15,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,623,35,15,10,10,20,20,25,35,30,10,47.28806048914175,12.288060489141749,18,Stayed unresolved
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,624,35,15,10,10,20,20,25,35,30,10,83.47070230361373,48.470702303613734,13,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,625,35,15,10,10,20,20,25,35,30,10,82.29083745569827,47.29083745569827,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,626,35,15,10,10,20,20,25,35,30,10,82.64109872862029,47.64109872862029,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,627,35,15,10,10,20,20,25,35,30,10,82.05326958307225,47.05326958307225,14,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,628,35,15,10,10,20,20,25,35,30,10,81.08687214180851,46.08687214180851,12,Got worse
+Mild harm + Balanced discussion,Mild harm,Balanced discussion,629,35,15,10,10,20,20,25,35,30,10,81.20417912537249,46.20417912537249,11,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,600,35,15,10,10,20,20,15,20,55,10,83.8225584681093,48.82255846810931,16,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,601,35,15,10,10,20,20,15,20,55,10,82.08680014544176,47.08680014544176,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,602,35,15,10,10,20,20,15,20,55,10,80.94393137018112,45.94393137018112,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,603,35,15,10,10,20,20,15,20,55,10,84.58469361669653,49.584693616696526,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,604,35,15,10,10,20,20,15,20,55,10,81.51527858126202,46.515278581262024,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,605,35,15,10,10,20,20,15,20,55,10,83.71219374630212,48.71219374630212,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,606,35,15,10,10,20,20,15,20,55,10,80.13134194250298,45.131341942502985,14,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,607,35,15,10,10,20,20,15,20,55,10,83.21224597385151,48.21224597385151,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,608,35,15,10,10,20,20,15,20,55,10,80.43814559929764,45.43814559929764,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,609,35,15,10,10,20,20,15,20,55,10,80.18818840292849,45.18818840292849,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,610,35,15,10,10,20,20,15,20,55,10,81.20364299272245,46.20364299272245,15,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,611,35,15,10,10,20,20,15,20,55,10,85.33403109262689,50.33403109262689,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,612,35,15,10,10,20,20,15,20,55,10,84.24148372683416,49.24148372683416,14,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,613,35,15,10,10,20,20,15,20,55,10,84.77554984479922,49.775549844799215,16,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,614,35,15,10,10,20,20,15,20,55,10,82.96836896949756,47.96836896949756,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,615,35,15,10,10,20,20,15,20,55,10,84.53687753559223,49.536877535592225,14,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,616,35,15,10,10,20,20,15,20,55,10,83.25629691606169,48.256296916061686,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,617,35,15,10,10,20,20,15,20,55,10,80.13886254951363,45.13886254951363,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,618,35,15,10,10,20,20,15,20,55,10,82.90366357707374,47.90366357707374,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,619,35,15,10,10,20,20,15,20,55,10,82.16279719633317,47.16279719633317,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,620,35,15,10,10,20,20,15,20,55,10,82.88404994593981,47.88404994593981,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,621,35,15,10,10,20,20,15,20,55,10,81.65930636068245,46.65930636068245,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,622,35,15,10,10,20,20,15,20,55,10,80.02585766868425,45.02585766868425,12,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,623,35,15,10,10,20,20,15,20,55,10,84.20234683730246,49.20234683730246,11,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,624,35,15,10,10,20,20,15,20,55,10,83.18909369737169,48.18909369737169,15,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,625,35,15,10,10,20,20,15,20,55,10,84.41964266055273,49.419642660552725,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,626,35,15,10,10,20,20,15,20,55,10,84.46210405624389,49.46210405624389,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,627,35,15,10,10,20,20,15,20,55,10,81.99301719342992,46.99301719342992,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,628,35,15,10,10,20,20,15,20,55,10,85.56242884688102,50.56242884688102,13,Got worse
+Mild harm + Silent majority,Mild harm,Silent majority,629,35,15,10,10,20,20,15,20,55,10,80.95215185555753,45.95215185555753,14,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,600,35,15,10,10,20,20,45,20,25,10,81.57310381355461,46.57310381355461,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,601,35,15,10,10,20,20,45,20,25,10,85.45847326300338,50.458473263003384,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,602,35,15,10,10,20,20,45,20,25,10,84.84801401664868,49.848014016648676,11,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,603,35,15,10,10,20,20,45,20,25,10,87.76574943219786,52.765749432197865,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,604,35,15,10,10,20,20,45,20,25,10,81.248194656805,46.248194656805,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,605,35,15,10,10,20,20,45,20,25,10,88.56708585721586,53.56708585721586,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,606,35,15,10,10,20,20,45,20,25,10,83.14300015110669,48.14300015110669,11,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,607,35,15,10,10,20,20,45,20,25,10,85.12725769372038,50.12725769372038,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,608,35,15,10,10,20,20,45,20,25,10,81.33657608044228,46.336576080442285,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,609,35,15,10,10,20,20,45,20,25,10,83.55531688825891,48.555316888258915,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,610,35,15,10,10,20,20,45,20,25,10,81.59700527545341,46.59700527545341,8,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,611,35,15,10,10,20,20,45,20,25,10,84.89445122004534,49.89445122004534,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,612,35,15,10,10,20,20,45,20,25,10,86.33046442877581,51.33046442877581,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,613,35,15,10,10,20,20,45,20,25,10,80.86570684012518,45.865706840125185,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,614,35,15,10,10,20,20,45,20,25,10,81.40202579508043,46.402025795080434,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,615,35,15,10,10,20,20,45,20,25,10,80.5944173463064,45.5944173463064,8,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,616,35,15,10,10,20,20,45,20,25,10,81.68729043436821,46.68729043436821,8,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,617,35,15,10,10,20,20,45,20,25,10,83.58562072822716,48.585620728227155,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,618,35,15,10,10,20,20,45,20,25,10,84.29288603861994,49.29288603861994,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,619,35,15,10,10,20,20,45,20,25,10,81.84209837717384,46.84209837717384,8,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,620,35,15,10,10,20,20,45,20,25,10,84.16793586559794,49.16793586559794,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,621,35,15,10,10,20,20,45,20,25,10,81.6405542994563,46.6405542994563,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,622,35,15,10,10,20,20,45,20,25,10,82.62228884823519,47.622288848235186,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,623,35,15,10,10,20,20,45,20,25,10,83.97799982355589,48.97799982355589,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,624,35,15,10,10,20,20,45,20,25,10,83.51865546628436,48.51865546628436,11,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,625,35,15,10,10,20,20,45,20,25,10,83.3221802072128,48.322180207212796,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,626,35,15,10,10,20,20,45,20,25,10,82.70929428150917,47.70929428150917,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,627,35,15,10,10,20,20,45,20,25,10,82.86711972229214,47.867119722292145,10,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,628,35,15,10,10,20,20,45,20,25,10,83.99368660259083,48.99368660259083,9,Got worse
+Mild harm + Bully-support leaning,Mild harm,Bully-support leaning,629,35,15,10,10,20,20,45,20,25,10,82.26352753904213,47.26352753904213,8,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,600,40,25,15,20,25,25,5,70,20,5,82.66932904469503,42.66932904469503,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,601,40,25,15,20,25,25,5,70,20,5,83.45911676057169,43.45911676057169,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,602,40,25,15,20,25,25,5,70,20,5,84.08205959290481,44.08205959290481,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,603,40,25,15,20,25,25,5,70,20,5,82.16874918438987,42.16874918438987,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,604,40,25,15,20,25,25,5,70,20,5,84.96664542169398,44.96664542169398,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,605,40,25,15,20,25,25,5,70,20,5,82.01034400609723,42.01034400609723,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,606,40,25,15,20,25,25,5,70,20,5,81.85179659957399,41.85179659957399,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,607,40,25,15,20,25,25,5,70,20,5,82.89396777831563,42.89396777831563,9,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,608,40,25,15,20,25,25,5,70,20,5,85.67989441862676,45.67989441862676,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,609,40,25,15,20,25,25,5,70,20,5,82.60094837695502,42.60094837695502,14,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,610,40,25,15,20,25,25,5,70,20,5,85.02946175174827,45.02946175174827,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,611,40,25,15,20,25,25,5,70,20,5,83.3017607049123,43.3017607049123,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,612,40,25,15,20,25,25,5,70,20,5,34.4893680321882,-5.510631967811797,18,Stayed unresolved
+Medium harm + Protective majority,Medium harm,Protective majority,613,40,25,15,20,25,25,5,70,20,5,80.22306217277206,40.22306217277206,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,614,40,25,15,20,25,25,5,70,20,5,81.24724986424289,41.24724986424289,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,615,40,25,15,20,25,25,5,70,20,5,80.81164808517052,40.81164808517052,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,616,40,25,15,20,25,25,5,70,20,5,82.71874445719061,42.71874445719061,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,617,40,25,15,20,25,25,5,70,20,5,82.87916097111052,42.87916097111052,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,618,40,25,15,20,25,25,5,70,20,5,26.825898399938744,-13.174101600061256,18,Stayed unresolved
+Medium harm + Protective majority,Medium harm,Protective majority,619,40,25,15,20,25,25,5,70,20,5,85.59349606739491,45.59349606739491,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,620,40,25,15,20,25,25,5,70,20,5,81.23879896207262,41.23879896207262,9,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,621,40,25,15,20,25,25,5,70,20,5,83.26300027328128,43.26300027328128,8,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,622,40,25,15,20,25,25,5,70,20,5,80.64379482472566,40.64379482472566,13,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,623,40,25,15,20,25,25,5,70,20,5,81.37334165494026,41.37334165494026,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,624,40,25,15,20,25,25,5,70,20,5,84.06327435804678,44.06327435804678,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,625,40,25,15,20,25,25,5,70,20,5,82.49986486276677,42.49986486276677,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,626,40,25,15,20,25,25,5,70,20,5,82.68332827556978,42.68332827556978,10,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,627,40,25,15,20,25,25,5,70,20,5,82.61740708551204,42.61740708551204,11,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,628,40,25,15,20,25,25,5,70,20,5,82.86418544031316,42.864185440313165,12,Got worse
+Medium harm + Protective majority,Medium harm,Protective majority,629,40,25,15,20,25,25,5,70,20,5,81.74495672957674,41.74495672957674,10,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,600,40,25,15,20,25,25,15,55,25,5,83.53410250868615,43.534102508686146,10,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,601,40,25,15,20,25,25,15,55,25,5,84.10501665752022,44.105016657520224,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,602,40,25,15,20,25,25,15,55,25,5,81.17944117844003,41.17944117844003,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,603,40,25,15,20,25,25,15,55,25,5,84.08853637331678,44.088536373316785,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,604,40,25,15,20,25,25,15,55,25,5,85.67979524621516,45.679795246215164,10,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,605,40,25,15,20,25,25,15,55,25,5,81.57762897297242,41.57762897297242,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,606,40,25,15,20,25,25,15,55,25,5,80.44484080521191,40.44484080521191,8,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,607,40,25,15,20,25,25,15,55,25,5,83.54530368872933,43.545303688729334,11,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,608,40,25,15,20,25,25,15,55,25,5,81.56215425256042,41.56215425256042,8,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,609,40,25,15,20,25,25,15,55,25,5,81.83697069749408,41.83697069749408,11,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,610,40,25,15,20,25,25,15,55,25,5,84.87596789130403,44.87596789130403,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,611,40,25,15,20,25,25,15,55,25,5,85.14062041420947,45.140620414209465,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,612,40,25,15,20,25,25,15,55,25,5,82.6497016778434,42.649701677843396,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,613,40,25,15,20,25,25,15,55,25,5,80.38422657086379,40.38422657086379,8,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,614,40,25,15,20,25,25,15,55,25,5,83.70992253453454,43.70992253453454,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,615,40,25,15,20,25,25,15,55,25,5,82.5054224795621,42.5054224795621,7,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,616,40,25,15,20,25,25,15,55,25,5,82.84147709169888,42.84147709169888,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,617,40,25,15,20,25,25,15,55,25,5,81.56303566961182,41.56303566961182,8,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,618,40,25,15,20,25,25,15,55,25,5,85.4533498644513,45.4533498644513,12,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,619,40,25,15,20,25,25,15,55,25,5,84.79528408530877,44.795284085308765,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,620,40,25,15,20,25,25,15,55,25,5,82.57141875845019,42.57141875845019,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,621,40,25,15,20,25,25,15,55,25,5,80.04152075839768,40.04152075839768,7,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,622,40,25,15,20,25,25,15,55,25,5,85.36156807472561,45.36156807472561,11,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,623,40,25,15,20,25,25,15,55,25,5,87.11165481168607,47.111654811686066,15,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,624,40,25,15,20,25,25,15,55,25,5,81.06166171457643,41.06166171457643,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,625,40,25,15,20,25,25,15,55,25,5,84.64655506569406,44.64655506569406,12,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,626,40,25,15,20,25,25,15,55,25,5,80.75163636233003,40.75163636233003,9,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,627,40,25,15,20,25,25,15,55,25,5,83.60034864255637,43.60034864255637,12,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,628,40,25,15,20,25,25,15,55,25,5,85.53320525017189,45.53320525017189,10,Got worse
+Medium harm + Defender leaning,Medium harm,Defender leaning,629,40,25,15,20,25,25,15,55,25,5,85.03298419926655,45.03298419926655,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,600,40,25,15,20,25,25,25,35,30,10,81.63908042958661,41.63908042958661,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,601,40,25,15,20,25,25,25,35,30,10,80.07764203289015,40.077642032890154,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,602,40,25,15,20,25,25,25,35,30,10,87.69365038284738,47.69365038284738,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,603,40,25,15,20,25,25,25,35,30,10,83.05701562139119,43.05701562139119,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,604,40,25,15,20,25,25,25,35,30,10,81.81520227706636,41.81520227706636,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,605,40,25,15,20,25,25,25,35,30,10,80.57791225413654,40.577912254136535,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,606,40,25,15,20,25,25,25,35,30,10,80.88733809790394,40.887338097903935,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,607,40,25,15,20,25,25,25,35,30,10,80.18802398696506,40.188023986965064,7,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,608,40,25,15,20,25,25,25,35,30,10,82.58748236949904,42.58748236949904,7,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,609,40,25,15,20,25,25,25,35,30,10,84.29584932663096,44.29584932663096,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,610,40,25,15,20,25,25,25,35,30,10,81.0355539565442,41.035553956544206,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,611,40,25,15,20,25,25,25,35,30,10,84.35960062766333,44.359600627663326,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,612,40,25,15,20,25,25,25,35,30,10,89.01703977530715,49.017039775307154,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,613,40,25,15,20,25,25,25,35,30,10,80.75097944971345,40.750979449713455,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,614,40,25,15,20,25,25,25,35,30,10,86.89905367594504,46.89905367594504,7,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,615,40,25,15,20,25,25,25,35,30,10,82.84168768414936,42.84168768414936,7,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,616,40,25,15,20,25,25,25,35,30,10,82.68457615731697,42.68457615731697,7,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,617,40,25,15,20,25,25,25,35,30,10,83.32544994769422,43.325449947694224,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,618,40,25,15,20,25,25,25,35,30,10,82.67733671052748,42.677336710527484,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,619,40,25,15,20,25,25,25,35,30,10,82.62523839770977,42.625238397709765,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,620,40,25,15,20,25,25,25,35,30,10,87.0451420088812,47.0451420088812,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,621,40,25,15,20,25,25,25,35,30,10,82.40632250922062,42.406322509220615,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,622,40,25,15,20,25,25,25,35,30,10,84.06684605789508,44.06684605789508,10,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,623,40,25,15,20,25,25,25,35,30,10,80.83773347359345,40.837733473593445,15,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,624,40,25,15,20,25,25,25,35,30,10,85.76152471760463,45.76152471760463,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,625,40,25,15,20,25,25,25,35,30,10,84.7709151330256,44.770915133025596,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,626,40,25,15,20,25,25,25,35,30,10,86.47164896517772,46.47164896517772,8,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,627,40,25,15,20,25,25,25,35,30,10,83.7512995870913,43.751299587091296,10,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,628,40,25,15,20,25,25,25,35,30,10,80.922472565681,40.922472565681005,9,Got worse
+Medium harm + Balanced discussion,Medium harm,Balanced discussion,629,40,25,15,20,25,25,25,35,30,10,80.76869609540967,40.768696095409666,7,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,600,40,25,15,20,25,25,15,20,55,10,86.91315865577731,46.91315865577731,10,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,601,40,25,15,20,25,25,15,20,55,10,85.6990249199752,45.6990249199752,10,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,602,40,25,15,20,25,25,15,20,55,10,82.34056522236298,42.34056522236298,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,603,40,25,15,20,25,25,15,20,55,10,80.34230754015562,40.342307540155616,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,604,40,25,15,20,25,25,15,20,55,10,81.52622803013014,41.52622803013014,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,605,40,25,15,20,25,25,15,20,55,10,83.09424924635405,43.09424924635405,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,606,40,25,15,20,25,25,15,20,55,10,84.21083201530475,44.210832015304746,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,607,40,25,15,20,25,25,15,20,55,10,83.19465857781631,43.19465857781631,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,608,40,25,15,20,25,25,15,20,55,10,82.2325218751945,42.23252187519449,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,609,40,25,15,20,25,25,15,20,55,10,81.56148696379948,41.56148696379948,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,610,40,25,15,20,25,25,15,20,55,10,83.4291034966106,43.429103496610594,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,611,40,25,15,20,25,25,15,20,55,10,81.21135607709681,41.21135607709681,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,612,40,25,15,20,25,25,15,20,55,10,81.50482577034936,41.504825770349356,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,613,40,25,15,20,25,25,15,20,55,10,83.76271254871956,43.76271254871956,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,614,40,25,15,20,25,25,15,20,55,10,86.22828712209764,46.22828712209764,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,615,40,25,15,20,25,25,15,20,55,10,82.14864770773129,42.148647707731286,7,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,616,40,25,15,20,25,25,15,20,55,10,81.3012892543141,41.3012892543141,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,617,40,25,15,20,25,25,15,20,55,10,83.23808277387094,43.23808277387094,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,618,40,25,15,20,25,25,15,20,55,10,86.35671137152153,46.35671137152153,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,619,40,25,15,20,25,25,15,20,55,10,86.38774160372962,46.38774160372962,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,620,40,25,15,20,25,25,15,20,55,10,83.60816583451131,43.60816583451131,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,621,40,25,15,20,25,25,15,20,55,10,83.2339228994573,43.2339228994573,10,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,622,40,25,15,20,25,25,15,20,55,10,84.18802723132708,44.188027231327084,10,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,623,40,25,15,20,25,25,15,20,55,10,85.28360213832245,45.28360213832245,8,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,624,40,25,15,20,25,25,15,20,55,10,88.08817012195897,48.08817012195897,11,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,625,40,25,15,20,25,25,15,20,55,10,84.79467280887998,44.79467280887998,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,626,40,25,15,20,25,25,15,20,55,10,81.48991339909371,41.48991339909371,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,627,40,25,15,20,25,25,15,20,55,10,80.28884386509642,40.288843865096425,9,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,628,40,25,15,20,25,25,15,20,55,10,86.00317029619173,46.003170296191726,10,Got worse
+Medium harm + Silent majority,Medium harm,Silent majority,629,40,25,15,20,25,25,15,20,55,10,80.25264199561535,40.25264199561535,9,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,600,40,25,15,20,25,25,45,20,25,10,89.35574488790628,49.35574488790628,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,601,40,25,15,20,25,25,45,20,25,10,84.02439338933995,44.02439338933995,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,602,40,25,15,20,25,25,45,20,25,10,82.31398999998135,42.313989999981345,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,603,40,25,15,20,25,25,45,20,25,10,80.38779270920807,40.38779270920807,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,604,40,25,15,20,25,25,45,20,25,10,87.82705352685898,47.827053526858975,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,605,40,25,15,20,25,25,45,20,25,10,82.54434475529925,42.54434475529925,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,606,40,25,15,20,25,25,45,20,25,10,80.33249967807097,40.332499678070974,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,607,40,25,15,20,25,25,45,20,25,10,84.90925297419219,44.909252974192185,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,608,40,25,15,20,25,25,45,20,25,10,87.29731349818672,47.297313498186725,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,609,40,25,15,20,25,25,45,20,25,10,85.17091947937247,45.17091947937247,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,610,40,25,15,20,25,25,45,20,25,10,85.78280814643645,45.78280814643645,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,611,40,25,15,20,25,25,45,20,25,10,80.79084767259316,40.79084767259316,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,612,40,25,15,20,25,25,45,20,25,10,82.62402607271595,42.62402607271595,8,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,613,40,25,15,20,25,25,45,20,25,10,85.63335242553921,45.633352425539215,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,614,40,25,15,20,25,25,45,20,25,10,81.99012114219397,41.99012114219397,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,615,40,25,15,20,25,25,45,20,25,10,85.25006940675475,45.25006940675475,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,616,40,25,15,20,25,25,45,20,25,10,85.71659467589535,45.71659467589535,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,617,40,25,15,20,25,25,45,20,25,10,84.99045780138036,44.99045780138036,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,618,40,25,15,20,25,25,45,20,25,10,86.7855865080994,46.7855865080994,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,619,40,25,15,20,25,25,45,20,25,10,81.58721849107103,41.58721849107103,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,620,40,25,15,20,25,25,45,20,25,10,80.82879455958927,40.82879455958927,6,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,621,40,25,15,20,25,25,45,20,25,10,81.20553564286067,41.20553564286067,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,622,40,25,15,20,25,25,45,20,25,10,85.51217752235353,45.512177522353525,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,623,40,25,15,20,25,25,45,20,25,10,89.2326079758961,49.2326079758961,8,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,624,40,25,15,20,25,25,45,20,25,10,83.14697474162378,43.14697474162378,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,625,40,25,15,20,25,25,45,20,25,10,81.74040091970987,41.74040091970987,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,626,40,25,15,20,25,25,45,20,25,10,87.54630540976811,47.54630540976811,8,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,627,40,25,15,20,25,25,45,20,25,10,85.1689522841934,45.168952284193395,8,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,628,40,25,15,20,25,25,45,20,25,10,82.0982207304549,42.0982207304549,7,Got worse
+Medium harm + Bully-support leaning,Medium harm,Bully-support leaning,629,40,25,15,20,25,25,45,20,25,10,84.45859251449272,44.45859251449272,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,600,45,35,25,30,35,35,5,70,20,5,87.36670662210793,42.36670662210793,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,601,45,35,25,30,35,35,5,70,20,5,81.93233744216725,36.93233744216725,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,602,45,35,25,30,35,35,5,70,20,5,86.78972792303962,41.78972792303962,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,603,45,35,25,30,35,35,5,70,20,5,81.90651537762378,36.906515377623776,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,604,45,35,25,30,35,35,5,70,20,5,80.48181634355257,35.481816343552566,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,605,45,35,25,30,35,35,5,70,20,5,83.49265234380333,38.49265234380333,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,606,45,35,25,30,35,35,5,70,20,5,85.14637139535554,40.146371395355544,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,607,45,35,25,30,35,35,5,70,20,5,83.74323416780207,38.74323416780207,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,608,45,35,25,30,35,35,5,70,20,5,80.4497864042933,35.449786404293306,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,609,45,35,25,30,35,35,5,70,20,5,83.75361650274637,38.75361650274637,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,610,45,35,25,30,35,35,5,70,20,5,81.71039922994534,36.71039922994534,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,611,45,35,25,30,35,35,5,70,20,5,82.45283496893153,37.452834968931526,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,612,45,35,25,30,35,35,5,70,20,5,82.87404100185387,37.87404100185387,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,613,45,35,25,30,35,35,5,70,20,5,80.58760280162463,35.58760280162463,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,614,45,35,25,30,35,35,5,70,20,5,49.55622038835886,4.5562203883588595,18,Stayed unresolved
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,615,45,35,25,30,35,35,5,70,20,5,82.81261125847169,37.81261125847169,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,616,45,35,25,30,35,35,5,70,20,5,85.17160585578453,40.171605855784534,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,617,45,35,25,30,35,35,5,70,20,5,81.7223890256133,36.722389025613296,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,618,45,35,25,30,35,35,5,70,20,5,86.37139308497183,41.37139308497183,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,619,45,35,25,30,35,35,5,70,20,5,82.94953931313282,37.94953931313282,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,620,45,35,25,30,35,35,5,70,20,5,82.71856907831088,37.71856907831088,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,621,45,35,25,30,35,35,5,70,20,5,84.25548790823316,39.255487908233164,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,622,45,35,25,30,35,35,5,70,20,5,87.28640791988389,42.286407919883885,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,623,45,35,25,30,35,35,5,70,20,5,83.02028464813353,38.020284648133526,7,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,624,45,35,25,30,35,35,5,70,20,5,81.4562569318249,36.456256931824896,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,625,45,35,25,30,35,35,5,70,20,5,83.81684939139855,38.81684939139855,9,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,626,45,35,25,30,35,35,5,70,20,5,81.02682872033998,36.02682872033998,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,627,45,35,25,30,35,35,5,70,20,5,80.23830662753377,35.238306627533774,6,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,628,45,35,25,30,35,35,5,70,20,5,87.14721861704736,42.14721861704736,8,Got worse
+Upper-medium harm + Protective majority,Upper-medium harm,Protective majority,629,45,35,25,30,35,35,5,70,20,5,81.80589580945077,36.805895809450774,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,600,45,35,25,30,35,35,15,55,25,5,85.88644195197931,40.88644195197931,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,601,45,35,25,30,35,35,15,55,25,5,82.94650145846806,37.94650145846806,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,602,45,35,25,30,35,35,15,55,25,5,83.68795277884782,38.687952778847816,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,603,45,35,25,30,35,35,15,55,25,5,84.42554519835498,39.42554519835498,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,604,45,35,25,30,35,35,15,55,25,5,85.15798616888735,40.15798616888735,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,605,45,35,25,30,35,35,15,55,25,5,86.32477092280006,41.324770922800056,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,606,45,35,25,30,35,35,15,55,25,5,84.08063714257958,39.080637142579576,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,607,45,35,25,30,35,35,15,55,25,5,81.54103221650394,36.541032216503936,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,608,45,35,25,30,35,35,15,55,25,5,82.16008910949674,37.16008910949674,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,609,45,35,25,30,35,35,15,55,25,5,82.66057613711077,37.660576137110766,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,610,45,35,25,30,35,35,15,55,25,5,80.17655701946676,35.176557019466756,5,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,611,45,35,25,30,35,35,15,55,25,5,85.64457990536545,40.64457990536545,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,612,45,35,25,30,35,35,15,55,25,5,87.52989004931463,42.52989004931463,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,613,45,35,25,30,35,35,15,55,25,5,80.34432546342101,35.344325463421015,5,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,614,45,35,25,30,35,35,15,55,25,5,82.0386753081329,37.038675308132895,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,615,45,35,25,30,35,35,15,55,25,5,82.35196157996049,37.35196157996049,5,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,616,45,35,25,30,35,35,15,55,25,5,88.35868349367985,43.35868349367985,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,617,45,35,25,30,35,35,15,55,25,5,81.02301291972958,36.02301291972958,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,618,45,35,25,30,35,35,15,55,25,5,82.32085156899268,37.32085156899268,5,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,619,45,35,25,30,35,35,15,55,25,5,82.40083491936367,37.400834919363675,5,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,620,45,35,25,30,35,35,15,55,25,5,82.34580219022558,37.345802190225584,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,621,45,35,25,30,35,35,15,55,25,5,83.97195859448972,38.97195859448972,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,622,45,35,25,30,35,35,15,55,25,5,83.66990003852028,38.66990003852028,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,623,45,35,25,30,35,35,15,55,25,5,85.52889251132385,40.528892511323846,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,624,45,35,25,30,35,35,15,55,25,5,85.82333443880762,40.82333443880762,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,625,45,35,25,30,35,35,15,55,25,5,83.71985851854484,38.71985851854484,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,626,45,35,25,30,35,35,15,55,25,5,82.45523322743148,37.45523322743148,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,627,45,35,25,30,35,35,15,55,25,5,80.97537087224623,35.97537087224623,6,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,628,45,35,25,30,35,35,15,55,25,5,81.15966464966637,36.15966464966637,7,Got worse
+Upper-medium harm + Defender leaning,Upper-medium harm,Defender leaning,629,45,35,25,30,35,35,15,55,25,5,84.68268137360258,39.68268137360258,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,600,45,35,25,30,35,35,25,35,30,10,81.25549124832885,36.25549124832885,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,601,45,35,25,30,35,35,25,35,30,10,84.68224714774676,39.682247147746764,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,602,45,35,25,30,35,35,25,35,30,10,81.44733215302281,36.44733215302281,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,603,45,35,25,30,35,35,25,35,30,10,81.63792477974125,36.637924779741255,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,604,45,35,25,30,35,35,25,35,30,10,85.21547317579073,40.215473175790734,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,605,45,35,25,30,35,35,25,35,30,10,88.33266293583249,43.33266293583249,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,606,45,35,25,30,35,35,25,35,30,10,85.76742171243717,40.76742171243717,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,607,45,35,25,30,35,35,25,35,30,10,80.46583090825027,35.46583090825027,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,608,45,35,25,30,35,35,25,35,30,10,82.67488994455,37.67488994455,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,609,45,35,25,30,35,35,25,35,30,10,82.44035455002376,37.440354550023756,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,610,45,35,25,30,35,35,25,35,30,10,86.02687632113451,41.02687632113451,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,611,45,35,25,30,35,35,25,35,30,10,84.35947651203438,39.35947651203438,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,612,45,35,25,30,35,35,25,35,30,10,85.16128741737421,40.16128741737421,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,613,45,35,25,30,35,35,25,35,30,10,86.77967473273297,41.77967473273297,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,614,45,35,25,30,35,35,25,35,30,10,85.09636812849219,40.09636812849219,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,615,45,35,25,30,35,35,25,35,30,10,87.56913721831461,42.56913721831461,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,616,45,35,25,30,35,35,25,35,30,10,81.12583902966,36.12583902966,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,617,45,35,25,30,35,35,25,35,30,10,83.73812940175887,38.73812940175887,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,618,45,35,25,30,35,35,25,35,30,10,83.35542995845569,38.35542995845569,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,619,45,35,25,30,35,35,25,35,30,10,82.14624465484049,37.14624465484049,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,620,45,35,25,30,35,35,25,35,30,10,83.71551499769954,38.71551499769954,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,621,45,35,25,30,35,35,25,35,30,10,83.35121023373662,38.35121023373662,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,622,45,35,25,30,35,35,25,35,30,10,85.82402655939927,40.82402655939927,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,623,45,35,25,30,35,35,25,35,30,10,89.20429695039849,44.204296950398486,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,624,45,35,25,30,35,35,25,35,30,10,85.09720837638721,40.097208376387215,7,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,625,45,35,25,30,35,35,25,35,30,10,81.76619609488908,36.76619609488908,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,626,45,35,25,30,35,35,25,35,30,10,82.93484944316847,37.934849443168474,5,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,627,45,35,25,30,35,35,25,35,30,10,81.04147543754374,36.04147543754374,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,628,45,35,25,30,35,35,25,35,30,10,82.93418889112995,37.93418889112995,6,Got worse
+Upper-medium harm + Balanced discussion,Upper-medium harm,Balanced discussion,629,45,35,25,30,35,35,25,35,30,10,85.41873390387403,40.41873390387403,5,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,600,45,35,25,30,35,35,15,20,55,10,83.73155251496034,38.73155251496034,7,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,601,45,35,25,30,35,35,15,20,55,10,86.10314942520951,41.10314942520951,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,602,45,35,25,30,35,35,15,20,55,10,81.1400629779072,36.140062977907206,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,603,45,35,25,30,35,35,15,20,55,10,84.02599433048599,39.025994330485986,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,604,45,35,25,30,35,35,15,20,55,10,85.57029769278279,40.57029769278279,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,605,45,35,25,30,35,35,15,20,55,10,80.51237071416155,35.51237071416155,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,606,45,35,25,30,35,35,15,20,55,10,86.65757173488724,41.65757173488724,7,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,607,45,35,25,30,35,35,15,20,55,10,81.04082611490257,36.04082611490257,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,608,45,35,25,30,35,35,15,20,55,10,84.19996822840181,39.199968228401815,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,609,45,35,25,30,35,35,15,20,55,10,83.85152925906281,38.851529259062815,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,610,45,35,25,30,35,35,15,20,55,10,82.48013923070997,37.480139230709966,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,611,45,35,25,30,35,35,15,20,55,10,87.37248644226939,42.37248644226939,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,612,45,35,25,30,35,35,15,20,55,10,83.44890064583261,38.44890064583261,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,613,45,35,25,30,35,35,15,20,55,10,82.23307987038895,37.23307987038895,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,614,45,35,25,30,35,35,15,20,55,10,86.87231407619727,41.87231407619727,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,615,45,35,25,30,35,35,15,20,55,10,82.37854772172304,37.37854772172304,5,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,616,45,35,25,30,35,35,15,20,55,10,81.94260464705124,36.94260464705124,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,617,45,35,25,30,35,35,15,20,55,10,81.27912884138726,36.27912884138726,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,618,45,35,25,30,35,35,15,20,55,10,84.17267547744734,39.17267547744734,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,619,45,35,25,30,35,35,15,20,55,10,82.6044264934621,37.6044264934621,5,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,620,45,35,25,30,35,35,15,20,55,10,80.398218799155,35.398218799155,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,621,45,35,25,30,35,35,15,20,55,10,86.38344600235962,41.38344600235962,7,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,622,45,35,25,30,35,35,15,20,55,10,81.34987993251976,36.349879932519755,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,623,45,35,25,30,35,35,15,20,55,10,81.59831816826419,36.598318168264186,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,624,45,35,25,30,35,35,15,20,55,10,82.26716476148188,37.26716476148188,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,625,45,35,25,30,35,35,15,20,55,10,80.02592888200726,35.025928882007264,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,626,45,35,25,30,35,35,15,20,55,10,83.56214659306475,38.56214659306475,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,627,45,35,25,30,35,35,15,20,55,10,83.85813730196031,38.85813730196031,7,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,628,45,35,25,30,35,35,15,20,55,10,81.707009955365,36.707009955364995,6,Got worse
+Upper-medium harm + Silent majority,Upper-medium harm,Silent majority,629,45,35,25,30,35,35,15,20,55,10,81.33798494226205,36.337984942262054,6,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,600,45,35,25,30,35,35,45,20,25,10,81.07447869787144,36.07447869787144,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,601,45,35,25,30,35,35,45,20,25,10,84.95846963792373,39.95846963792373,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,602,45,35,25,30,35,35,45,20,25,10,80.99207527378823,35.99207527378823,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,603,45,35,25,30,35,35,45,20,25,10,85.95843404828618,40.95843404828618,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,604,45,35,25,30,35,35,45,20,25,10,82.94747555338257,37.947475553382574,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,605,45,35,25,30,35,35,45,20,25,10,80.12951165294469,35.129511652944686,4,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,606,45,35,25,30,35,35,45,20,25,10,87.80540111724895,42.80540111724895,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,607,45,35,25,30,35,35,45,20,25,10,81.63826305320333,36.63826305320333,4,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,608,45,35,25,30,35,35,45,20,25,10,89.70037687479022,44.70037687479022,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,609,45,35,25,30,35,35,45,20,25,10,85.05283593211456,40.05283593211456,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,610,45,35,25,30,35,35,45,20,25,10,85.51437496032872,40.51437496032872,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,611,45,35,25,30,35,35,45,20,25,10,80.6649897133577,35.6649897133577,4,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,612,45,35,25,30,35,35,45,20,25,10,80.67847770614061,35.67847770614061,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,613,45,35,25,30,35,35,45,20,25,10,89.70915099026185,44.70915099026185,6,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,614,45,35,25,30,35,35,45,20,25,10,89.03580330176673,44.035803301766734,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,615,45,35,25,30,35,35,45,20,25,10,89.28337197355152,44.283371973551525,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,616,45,35,25,30,35,35,45,20,25,10,85.26816320749101,40.268163207491014,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,617,45,35,25,30,35,35,45,20,25,10,83.65940222435917,38.65940222435917,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,618,45,35,25,30,35,35,45,20,25,10,83.85522349656155,38.85522349656155,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,619,45,35,25,30,35,35,45,20,25,10,86.4444143524819,41.4444143524819,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,620,45,35,25,30,35,35,45,20,25,10,89.50292411535975,44.50292411535975,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,621,45,35,25,30,35,35,45,20,25,10,87.63870262717128,42.638702627171284,6,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,622,45,35,25,30,35,35,45,20,25,10,87.89851598495974,42.898515984959744,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,623,45,35,25,30,35,35,45,20,25,10,82.38098501477688,37.38098501477688,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,624,45,35,25,30,35,35,45,20,25,10,89.24439517988822,44.244395179888215,6,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,625,45,35,25,30,35,35,45,20,25,10,83.45158612959814,38.45158612959814,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,626,45,35,25,30,35,35,45,20,25,10,80.83480519331067,35.83480519331067,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,627,45,35,25,30,35,35,45,20,25,10,82.12949584362043,37.12949584362043,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,628,45,35,25,30,35,35,45,20,25,10,87.06614088000418,42.066140880004184,5,Got worse
+Upper-medium harm + Bully-support leaning,Upper-medium harm,Bully-support leaning,629,45,35,25,30,35,35,45,20,25,10,83.4890713330487,38.4890713330487,4,Got worse
+High harm + Protective majority,High harm,Protective majority,600,55,50,35,45,50,50,5,70,20,5,80.04830241969506,25.048302419695062,4,Got worse
+High harm + Protective majority,High harm,Protective majority,601,55,50,35,45,50,50,5,70,20,5,83.48667224946287,28.48667224946287,4,Got worse
+High harm + Protective majority,High harm,Protective majority,602,55,50,35,45,50,50,5,70,20,5,86.16521359683037,31.16521359683037,4,Got worse
+High harm + Protective majority,High harm,Protective majority,603,55,50,35,45,50,50,5,70,20,5,85.1985293654177,30.1985293654177,4,Got worse
+High harm + Protective majority,High harm,Protective majority,604,55,50,35,45,50,50,5,70,20,5,83.8412667127359,28.8412667127359,4,Got worse
+High harm + Protective majority,High harm,Protective majority,605,55,50,35,45,50,50,5,70,20,5,81.66083771681414,26.660837716814143,4,Got worse
+High harm + Protective majority,High harm,Protective majority,606,55,50,35,45,50,50,5,70,20,5,84.90747639438796,29.907476394387956,5,Got worse
+High harm + Protective majority,High harm,Protective majority,607,55,50,35,45,50,50,5,70,20,5,84.36258423557517,29.36258423557517,4,Got worse
+High harm + Protective majority,High harm,Protective majority,608,55,50,35,45,50,50,5,70,20,5,82.41566218341809,27.415662183418092,4,Got worse
+High harm + Protective majority,High harm,Protective majority,609,55,50,35,45,50,50,5,70,20,5,84.05563824266139,29.055638242661388,4,Got worse
+High harm + Protective majority,High harm,Protective majority,610,55,50,35,45,50,50,5,70,20,5,87.1713865316222,32.171386531622204,5,Got worse
+High harm + Protective majority,High harm,Protective majority,611,55,50,35,45,50,50,5,70,20,5,83.52512723244833,28.525127232448327,4,Got worse
+High harm + Protective majority,High harm,Protective majority,612,55,50,35,45,50,50,5,70,20,5,87.64365906823777,32.64365906823777,5,Got worse
+High harm + Protective majority,High harm,Protective majority,613,55,50,35,45,50,50,5,70,20,5,85.04847059065622,30.048470590656223,4,Got worse
+High harm + Protective majority,High harm,Protective majority,614,55,50,35,45,50,50,5,70,20,5,83.73252598539482,28.732525985394815,4,Got worse
+High harm + Protective majority,High harm,Protective majority,615,55,50,35,45,50,50,5,70,20,5,86.7352138587597,31.735213858759707,4,Got worse
+High harm + Protective majority,High harm,Protective majority,616,55,50,35,45,50,50,5,70,20,5,80.1313623959938,25.131362395993804,3,Got worse
+High harm + Protective majority,High harm,Protective majority,617,55,50,35,45,50,50,5,70,20,5,86.41438599835521,31.414385998355215,4,Got worse
+High harm + Protective majority,High harm,Protective majority,618,55,50,35,45,50,50,5,70,20,5,87.27049917147133,32.27049917147133,4,Got worse
+High harm + Protective majority,High harm,Protective majority,619,55,50,35,45,50,50,5,70,20,5,80.81471625115937,25.814716251159368,3,Got worse
+High harm + Protective majority,High harm,Protective majority,620,55,50,35,45,50,50,5,70,20,5,89.00132711536843,34.001327115368426,5,Got worse
+High harm + Protective majority,High harm,Protective majority,621,55,50,35,45,50,50,5,70,20,5,90.37563141493632,35.37563141493632,4,Got worse
+High harm + Protective majority,High harm,Protective majority,622,55,50,35,45,50,50,5,70,20,5,84.00951595440591,29.009515954405913,4,Got worse
+High harm + Protective majority,High harm,Protective majority,623,55,50,35,45,50,50,5,70,20,5,83.68680611629145,28.68680611629145,4,Got worse
+High harm + Protective majority,High harm,Protective majority,624,55,50,35,45,50,50,5,70,20,5,80.04593856853796,25.045938568537963,4,Got worse
+High harm + Protective majority,High harm,Protective majority,625,55,50,35,45,50,50,5,70,20,5,80.20566610325693,25.20566610325693,7,Got worse
+High harm + Protective majority,High harm,Protective majority,626,55,50,35,45,50,50,5,70,20,5,82.45725002402767,27.457250024027672,5,Got worse
+High harm + Protective majority,High harm,Protective majority,627,55,50,35,45,50,50,5,70,20,5,86.58043992857256,31.58043992857256,4,Got worse
+High harm + Protective majority,High harm,Protective majority,628,55,50,35,45,50,50,5,70,20,5,80.21919335860606,25.219193358606063,4,Got worse
+High harm + Protective majority,High harm,Protective majority,629,55,50,35,45,50,50,5,70,20,5,86.97046796012532,31.97046796012532,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,600,55,50,35,45,50,50,15,55,25,5,91.63607043940998,36.63607043940998,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,601,55,50,35,45,50,50,15,55,25,5,87.94213552008392,32.94213552008392,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,602,55,50,35,45,50,50,15,55,25,5,82.78961285166032,27.789612851660323,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,603,55,50,35,45,50,50,15,55,25,5,82.46178276502033,27.46178276502033,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,604,55,50,35,45,50,50,15,55,25,5,87.5901695466288,32.5901695466288,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,605,55,50,35,45,50,50,15,55,25,5,89.86773205594413,34.86773205594413,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,606,55,50,35,45,50,50,15,55,25,5,86.53157428056954,31.531574280569544,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,607,55,50,35,45,50,50,15,55,25,5,81.98027527726293,26.980275277262933,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,608,55,50,35,45,50,50,15,55,25,5,91.38988843106482,36.38988843106482,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,609,55,50,35,45,50,50,15,55,25,5,87.44147844863328,32.441478448633276,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,610,55,50,35,45,50,50,15,55,25,5,83.95907881648066,28.959078816480655,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,611,55,50,35,45,50,50,15,55,25,5,80.09498419097001,25.09498419097001,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,612,55,50,35,45,50,50,15,55,25,5,89.00096087455023,34.00096087455023,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,613,55,50,35,45,50,50,15,55,25,5,80.82934484611212,25.82934484611212,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,614,55,50,35,45,50,50,15,55,25,5,80.70070079318403,25.700700793184026,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,615,55,50,35,45,50,50,15,55,25,5,80.04458201535124,25.04458201535124,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,616,55,50,35,45,50,50,15,55,25,5,87.13802497966623,32.13802497966623,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,617,55,50,35,45,50,50,15,55,25,5,86.5195843698782,31.519584369878203,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,618,55,50,35,45,50,50,15,55,25,5,82.61947307175868,27.619473071758676,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,619,55,50,35,45,50,50,15,55,25,5,84.70761450853792,29.707614508537915,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,620,55,50,35,45,50,50,15,55,25,5,88.3078162180747,33.307816218074706,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,621,55,50,35,45,50,50,15,55,25,5,87.50505150223265,32.50505150223265,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,622,55,50,35,45,50,50,15,55,25,5,88.09593084158325,33.095930841583254,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,623,55,50,35,45,50,50,15,55,25,5,82.37006703580107,27.37006703580107,3,Got worse
+High harm + Defender leaning,High harm,Defender leaning,624,55,50,35,45,50,50,15,55,25,5,84.67017471359691,29.670174713596907,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,625,55,50,35,45,50,50,15,55,25,5,86.83296289507192,31.832962895071915,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,626,55,50,35,45,50,50,15,55,25,5,87.63310603507814,32.63310603507814,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,627,55,50,35,45,50,50,15,55,25,5,82.85768403940428,27.857684039404276,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,628,55,50,35,45,50,50,15,55,25,5,85.4139267996736,30.413926799673604,4,Got worse
+High harm + Defender leaning,High harm,Defender leaning,629,55,50,35,45,50,50,15,55,25,5,82.62947472276636,27.62947472276636,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,600,55,50,35,45,50,50,25,35,30,10,89.40019830745302,34.400198307453024,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,601,55,50,35,45,50,50,25,35,30,10,80.7082804183011,25.7082804183011,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,602,55,50,35,45,50,50,25,35,30,10,85.08058961116554,30.080589611165536,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,603,55,50,35,45,50,50,25,35,30,10,84.36487395144246,29.364873951442462,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,604,55,50,35,45,50,50,25,35,30,10,92.2210087485222,37.221008748522195,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,605,55,50,35,45,50,50,25,35,30,10,82.14949634885619,27.14949634885619,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,606,55,50,35,45,50,50,25,35,30,10,89.048569291848,34.048569291848,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,607,55,50,35,45,50,50,25,35,30,10,82.32124376407965,27.321243764079654,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,608,55,50,35,45,50,50,25,35,30,10,81.70916718513426,26.709167185134262,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,609,55,50,35,45,50,50,25,35,30,10,88.2087613793313,33.20876137933131,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,610,55,50,35,45,50,50,25,35,30,10,88.0833005084666,33.08330050846661,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,611,55,50,35,45,50,50,25,35,30,10,80.31198959020978,25.311989590209777,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,612,55,50,35,45,50,50,25,35,30,10,80.2924367865427,25.292436786542694,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,613,55,50,35,45,50,50,25,35,30,10,91.28888164607783,36.288881646077826,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,614,55,50,35,45,50,50,25,35,30,10,83.1793334996299,28.179333499629905,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,615,55,50,35,45,50,50,25,35,30,10,84.41930136957149,29.419301369571485,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,616,55,50,35,45,50,50,25,35,30,10,81.68637749811676,26.686377498116755,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,617,55,50,35,45,50,50,25,35,30,10,82.24579293185776,27.245792931857764,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,618,55,50,35,45,50,50,25,35,30,10,90.59871615367923,35.598716153679234,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,619,55,50,35,45,50,50,25,35,30,10,84.97198741393903,29.971987413939033,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,620,55,50,35,45,50,50,25,35,30,10,88.35878764193986,33.358787641939855,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,621,55,50,35,45,50,50,25,35,30,10,90.5103411420474,35.510341142047395,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,622,55,50,35,45,50,50,25,35,30,10,85.30698138615887,30.306981386158867,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,623,55,50,35,45,50,50,25,35,30,10,82.37406183633519,27.374061836335187,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,624,55,50,35,45,50,50,25,35,30,10,87.40844839530814,32.40844839530814,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,625,55,50,35,45,50,50,25,35,30,10,80.24839509641771,25.24839509641771,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,626,55,50,35,45,50,50,25,35,30,10,80.71622946504878,25.716229465048784,3,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,627,55,50,35,45,50,50,25,35,30,10,80.06336827621081,25.06336827621081,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,628,55,50,35,45,50,50,25,35,30,10,86.13211900678242,31.132119006782418,4,Got worse
+High harm + Balanced discussion,High harm,Balanced discussion,629,55,50,35,45,50,50,25,35,30,10,87.876317614978,32.87631761497801,4,Got worse
+High harm + Silent majority,High harm,Silent majority,600,55,50,35,45,50,50,15,20,55,10,89.71239178243407,34.71239178243407,4,Got worse
+High harm + Silent majority,High harm,Silent majority,601,55,50,35,45,50,50,15,20,55,10,80.87749431622058,25.877494316220577,3,Got worse
+High harm + Silent majority,High harm,Silent majority,602,55,50,35,45,50,50,15,20,55,10,84.61467846604053,29.61467846604053,3,Got worse
+High harm + Silent majority,High harm,Silent majority,603,55,50,35,45,50,50,15,20,55,10,87.92712863824293,32.927128638242934,4,Got worse
+High harm + Silent majority,High harm,Silent majority,604,55,50,35,45,50,50,15,20,55,10,83.07769520489043,28.077695204890432,3,Got worse
+High harm + Silent majority,High harm,Silent majority,605,55,50,35,45,50,50,15,20,55,10,86.49366236095331,31.49366236095331,4,Got worse
+High harm + Silent majority,High harm,Silent majority,606,55,50,35,45,50,50,15,20,55,10,85.72823658097849,30.72823658097849,4,Got worse
+High harm + Silent majority,High harm,Silent majority,607,55,50,35,45,50,50,15,20,55,10,85.34635310663593,30.34635310663593,4,Got worse
+High harm + Silent majority,High harm,Silent majority,608,55,50,35,45,50,50,15,20,55,10,82.49307984752559,27.493079847525593,3,Got worse
+High harm + Silent majority,High harm,Silent majority,609,55,50,35,45,50,50,15,20,55,10,85.41850533926683,30.41850533926683,4,Got worse
+High harm + Silent majority,High harm,Silent majority,610,55,50,35,45,50,50,15,20,55,10,80.92106591908279,25.921065919082793,3,Got worse
+High harm + Silent majority,High harm,Silent majority,611,55,50,35,45,50,50,15,20,55,10,80.41239478068671,25.41239478068671,3,Got worse
+High harm + Silent majority,High harm,Silent majority,612,55,50,35,45,50,50,15,20,55,10,87.92756532672098,32.92756532672098,4,Got worse
+High harm + Silent majority,High harm,Silent majority,613,55,50,35,45,50,50,15,20,55,10,85.49026975091985,30.49026975091985,4,Got worse
+High harm + Silent majority,High harm,Silent majority,614,55,50,35,45,50,50,15,20,55,10,86.73407184110206,31.734071841102065,4,Got worse
+High harm + Silent majority,High harm,Silent majority,615,55,50,35,45,50,50,15,20,55,10,80.7524168737731,25.7524168737731,3,Got worse
+High harm + Silent majority,High harm,Silent majority,616,55,50,35,45,50,50,15,20,55,10,80.90116444085356,25.901164440853563,3,Got worse
+High harm + Silent majority,High harm,Silent majority,617,55,50,35,45,50,50,15,20,55,10,86.86576272530665,31.865762725306652,4,Got worse
+High harm + Silent majority,High harm,Silent majority,618,55,50,35,45,50,50,15,20,55,10,87.82798914933504,32.82798914933504,4,Got worse
+High harm + Silent majority,High harm,Silent majority,619,55,50,35,45,50,50,15,20,55,10,87.46825665915509,32.46825665915509,3,Got worse
+High harm + Silent majority,High harm,Silent majority,620,55,50,35,45,50,50,15,20,55,10,84.10573530996676,29.10573530996676,3,Got worse
+High harm + Silent majority,High harm,Silent majority,621,55,50,35,45,50,50,15,20,55,10,86.3879617007106,31.387961700710605,4,Got worse
+High harm + Silent majority,High harm,Silent majority,622,55,50,35,45,50,50,15,20,55,10,85.23165048208217,30.231650482082173,4,Got worse
+High harm + Silent majority,High harm,Silent majority,623,55,50,35,45,50,50,15,20,55,10,89.10520309699703,34.10520309699703,4,Got worse
+High harm + Silent majority,High harm,Silent majority,624,55,50,35,45,50,50,15,20,55,10,82.51606534819943,27.516065348199433,4,Got worse
+High harm + Silent majority,High harm,Silent majority,625,55,50,35,45,50,50,15,20,55,10,82.60705472445784,27.60705472445784,4,Got worse
+High harm + Silent majority,High harm,Silent majority,626,55,50,35,45,50,50,15,20,55,10,87.18309677422252,32.18309677422252,4,Got worse
+High harm + Silent majority,High harm,Silent majority,627,55,50,35,45,50,50,15,20,55,10,85.9054354919746,30.9054354919746,4,Got worse
+High harm + Silent majority,High harm,Silent majority,628,55,50,35,45,50,50,15,20,55,10,86.01350680871337,31.013506808713373,4,Got worse
+High harm + Silent majority,High harm,Silent majority,629,55,50,35,45,50,50,15,20,55,10,88.9502246841463,33.950224684146306,4,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,600,55,50,35,45,50,50,45,20,25,10,88.76051358926368,33.76051358926368,4,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,601,55,50,35,45,50,50,45,20,25,10,83.55279329114599,28.55279329114599,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,602,55,50,35,45,50,50,45,20,25,10,86.77068200947201,31.77068200947201,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,603,55,50,35,45,50,50,45,20,25,10,88.52084598060587,33.52084598060587,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,604,55,50,35,45,50,50,45,20,25,10,84.2536359729045,29.253635972904505,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,605,55,50,35,45,50,50,45,20,25,10,87.43494210171106,32.43494210171106,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,606,55,50,35,45,50,50,45,20,25,10,85.93744963534056,30.937449635340556,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,607,55,50,35,45,50,50,45,20,25,10,88.94096426183737,33.940964261837365,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,608,55,50,35,45,50,50,45,20,25,10,83.65598962903661,28.65598962903661,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,609,55,50,35,45,50,50,45,20,25,10,88.82719795519795,33.827197955197946,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,610,55,50,35,45,50,50,45,20,25,10,87.68233366480302,32.682333664803025,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,611,55,50,35,45,50,50,45,20,25,10,88.93458650234699,33.93458650234699,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,612,55,50,35,45,50,50,45,20,25,10,83.80695228289626,28.806952282896262,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,613,55,50,35,45,50,50,45,20,25,10,85.47332849019384,30.473328490193836,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,614,55,50,35,45,50,50,45,20,25,10,85.26427163501978,30.26427163501978,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,615,55,50,35,45,50,50,45,20,25,10,82.5478177701591,27.5478177701591,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,616,55,50,35,45,50,50,45,20,25,10,90.1501820774117,35.1501820774117,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,617,55,50,35,45,50,50,45,20,25,10,85.62426318364508,30.624263183645084,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,618,55,50,35,45,50,50,45,20,25,10,85.0457472467272,30.045747246727203,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,619,55,50,35,45,50,50,45,20,25,10,80.13048157805423,25.13048157805423,2,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,620,55,50,35,45,50,50,45,20,25,10,84.1835122743196,29.183512274319597,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,621,55,50,35,45,50,50,45,20,25,10,88.85571996064691,33.85571996064691,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,622,55,50,35,45,50,50,45,20,25,10,90.27394393064843,35.27394393064843,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,623,55,50,35,45,50,50,45,20,25,10,81.0596360454291,26.0596360454291,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,624,55,50,35,45,50,50,45,20,25,10,81.39175343752368,26.391753437523676,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,625,55,50,35,45,50,50,45,20,25,10,86.1572052061412,31.1572052061412,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,626,55,50,35,45,50,50,45,20,25,10,83.57503994193672,28.575039941936723,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,627,55,50,35,45,50,50,45,20,25,10,88.24451910631231,33.24451910631231,4,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,628,55,50,35,45,50,50,45,20,25,10,85.76401469543232,30.764014695432323,3,Got worse
+High harm + Bully-support leaning,High harm,Bully-support leaning,629,55,50,35,45,50,50,45,20,25,10,91.06593267400835,36.06593267400835,3,Got worse

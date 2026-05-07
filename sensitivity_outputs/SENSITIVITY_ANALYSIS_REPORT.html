@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sensitivity Analysis Report</title>
+<style>
+@page { margin: 22mm 18mm; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: #1f2933; line-height: 1.45; font-size: 11.5pt; }
+h1 { color: #12343b; font-size: 24pt; border-bottom: 4px solid #2f6b7a; padding-bottom: 8px; }
+h2 { color: #2f6b7a; font-size: 17pt; margin-top: 24px; }
+h3 { color: #334e68; font-size: 13.5pt; margin-top: 18px; }
+p { margin: 8px 0; }
+ul { margin-top: 6px; }
+li { margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 18px 0; font-size: 9.2pt; page-break-inside: auto; }
+th { background: #2f6b7a; color: white; text-align: left; padding: 7px; border: 1px solid #d9e2ec; }
+td { padding: 6px; border: 1px solid #d9e2ec; vertical-align: top; }
+tr:nth-child(even) td { background: #f6f8fa; }
+strong { color: #12343b; }
+</style>
+</head>
+<body>
+<h1>Sensitivity Analysis Report</h1>
+<h2>Purpose</h2>
+<p>This sensitivity analysis tests how the current Mesa cyber-bystander simulation behaves when key environment settings are changed.</p>
+<p>The aim is not to prove real-world causality. The aim is to understand how the simulated environment responds over time when we change:</p>
+<ul>
+<li>the mix of bystander roles</li>
+<li>the harmfulness of the starting situation</li>
+<li>engagement pressure from likes and retweets</li>
+<li>social influence, learning, and memory settings</li>
+</ul>
+<h2>Experimental Setup</h2>
+<p>The experiment used the current Mesa backend through `mesa_bridge.py`.</p>
+<p>Each scenario was repeated across multiple random seeds so the result was not based on a single run.</p>
+<p>Main outcome measures:</p>
+<ul>
+<li>**Mean final bullying level:** average bullying level at the end of the run.</li>
+<li>**Mean change:** final bullying level minus starting bullying level.</li>
+<li>**Got worse rate:** percentage of runs that reached the escalation threshold.</li>
+<li>**Calmed down rate:** percentage of runs that reached the calming threshold.</li>
+<li>**Unresolved rate:** percentage of runs that ended without either threshold.</li>
+<li>**Mean steps:** average number of simulation steps before the run stopped.</li>
+</ul>
+<p>The default escalation threshold is 80. The default calming threshold is 20.</p>
+<h2>Main Finding</h2>
+<p>The current simulation is strongly biased toward escalation under the standard dashboard settings.</p>
+<p>In plain English:</p>
+<p><strong>When the harmful-content pressure is moderate or high, the bullying level usually rises over time even when there are more defenders. Defenders slow escalation, but they do not always reverse it unless they strongly dominate and the starting harm level is low.</strong></p>
+<p>This is useful scientifically because it shows what the current model assumes. It tells us that harmful content features such as toxicity, profanity, identity attack, and engagement have a very strong effect in the current environment.</p>
+<h2>Scenario Comparison</h2>
+<table><tbody>
+<tr><th>Scenario</th><th>Mean final bullying level</th><th>Mean change</th><th>Got worse</th><th>Calmed down</th><th>Unresolved</th><th>Mean steps</th></tr>
+<tr><td>Balanced baseline</td><td>85.3</td><td>+40.3</td><td>100%</td><td>0%</td><td>0%</td><td>5.0</td></tr>
+<tr><td>Defender-heavy</td><td>84.0</td><td>+39.0</td><td>100%</td><td>0%</td><td>0%</td><td>5.2</td></tr>
+<tr><td>High engagement</td><td>84.7</td><td>+39.7</td><td>100%</td><td>0%</td><td>0%</td><td>4.4</td></tr>
+<tr><td>High-harm context</td><td>89.6</td><td>+24.6</td><td>100%</td><td>0%</td><td>0%</td><td>1.9</td></tr>
+<tr><td>Instigator-heavy</td><td>85.0</td><td>+40.0</td><td>100%</td><td>0%</td><td>0%</td><td>4.2</td></tr>
+<tr><td>Low-harm context</td><td>82.4</td><td>+57.4</td><td>100%</td><td>0%</td><td>0%</td><td>13.3</td></tr>
+<tr><td>Neutral-heavy</td><td>84.9</td><td>+39.9</td><td>100%</td><td>0%</td><td>0%</td><td>5.2</td></tr>
+</tbody></table>
+<h3>Interpretation</h3>
+<p>The high-harm context escalated fastest, reaching the escalation threshold in about 2 steps on average.</p>
+<p>The low-harm context escalated more slowly, taking about 13 steps on average, but still eventually crossed the escalation threshold under the tested role mix.</p>
+<p>This suggests that the current model treats harmful content pressure as a constant upward force. Bystander behaviour matters, but under standard settings it mostly changes the speed of escalation rather than fully changing the final outcome.</p>
+<h2>Role Mix Sweep</h2>
+<p>This test gradually replaced instigators with defenders while keeping the rest of the scenario mostly stable.</p>
+<table><tbody>
+<tr><th>Role mix</th><th>Mean final bullying level</th><th>Mean change</th><th>Mean steps</th></tr>
+<tr><td>Defenders 0% / Instigators 60%</td><td>86.0</td><td>+41.0</td><td>3.9</td></tr>
+<tr><td>Defenders 10% / Instigators 50%</td><td>84.8</td><td>+39.8</td><td>4.2</td></tr>
+<tr><td>Defenders 20% / Instigators 40%</td><td>85.0</td><td>+40.0</td><td>4.4</td></tr>
+<tr><td>Defenders 30% / Instigators 30%</td><td>85.4</td><td>+40.4</td><td>4.8</td></tr>
+<tr><td>Defenders 40% / Instigators 20%</td><td>84.9</td><td>+39.9</td><td>5.1</td></tr>
+<tr><td>Defenders 50% / Instigators 10%</td><td>84.0</td><td>+39.0</td><td>5.3</td></tr>
+<tr><td>Defenders 60% / Instigators 0%</td><td>83.9</td><td>+38.9</td><td>6.0</td></tr>
+</tbody></table>
+<h3>Interpretation</h3>
+<p>More defenders delayed escalation, but did not stop it under the standard harm settings.</p>
+<p>This is an important model diagnosis. It means the dashboard currently shows the direction of bystander influence, but the harmful-content pressure is calibrated so strongly that role mix alone is not enough to calm the situation unless the scenario is already low risk.</p>
+<h2>Behaviour Module Comparison</h2>
+<p>This test compared four behaviour settings:</p>
+<ul>
+<li>rules only</li>
+<li>social influence only</li>
+<li>learning only</li>
+<li>social influence plus learning</li>
+</ul>
+<table><tbody>
+<tr><th>Behaviour setting</th><th>Mean final bullying level</th><th>Mean change</th><th>Got worse</th><th>Mean steps</th></tr>
+<tr><td>Learning only</td><td>84.5</td><td>+39.5</td><td>100%</td><td>5.0</td></tr>
+<tr><td>Rules only</td><td>83.7</td><td>+38.7</td><td>100%</td><td>5.5</td></tr>
+<tr><td>Social + learning</td><td>84.5</td><td>+39.5</td><td>100%</td><td>4.9</td></tr>
+<tr><td>Social influence only</td><td>83.0</td><td>+38.0</td><td>100%</td><td>5.4</td></tr>
+</tbody></table>
+<h3>Interpretation</h3>
+<p>Under the standard settings, ToM and learning did not substantially change the final outcome.</p>
+<p>This does not mean ToM and learning are useless. It means their effect is currently smaller than the harmful-content pressure in the model. For the scientific write-up, this can be described as a calibration finding:</p>
+<p><strong>The adaptive behaviour modules are present, but the current environmental pressure dominates agent adaptation in moderate-to-high harm scenarios.</strong></p>
+<h2>Targeted Calming Test</h2>
+<p>Because the main scenarios mostly escalated, a second experiment tested whether defenders can calm the environment under lower-harm conditions.</p>
+<table><tbody>
+<tr><th>Case</th><th>Mean final bullying level</th><th>Mean change</th><th>Got worse</th><th>Calmed down</th><th>Unresolved</th><th>Mean steps</th></tr>
+<tr><td>40% defenders low harm</td><td>81.6</td><td>+56.6</td><td>98%</td><td>0%</td><td>2%</td><td>13.6</td></tr>
+<tr><td>60% defenders low harm</td><td>60.1</td><td>+35.1</td><td>34%</td><td>20%</td><td>46%</td><td>15.7</td></tr>
+<tr><td>80% defenders low harm</td><td>29.5</td><td>+4.5</td><td>0%</td><td>74%</td><td>26%</td><td>9.0</td></tr>
+<tr><td>90% defenders low harm</td><td>21.2</td><td>-3.8</td><td>0%</td><td>92%</td><td>8%</td><td>5.5</td></tr>
+<tr><td>80% defenders toxicity 0</td><td>18.4</td><td>-6.6</td><td>0%</td><td>100%</td><td>0%</td><td>3.8</td></tr>
+<tr><td>80% defenders toxicity 10</td><td>25.3</td><td>+0.3</td><td>0%</td><td>82%</td><td>18%</td><td>8.2</td></tr>
+<tr><td>80% defenders toxicity 25</td><td>64.7</td><td>+39.7</td><td>54%</td><td>22%</td><td>24%</td><td>15.5</td></tr>
+<tr><td>80% defenders toxicity 50</td><td>83.3</td><td>+58.3</td><td>100%</td><td>0%</td><td>0%</td><td>10.5</td></tr>
+<tr><td>80% defenders toxicity 75</td><td>84.4</td><td>+59.4</td><td>100%</td><td>0%</td><td>0%</td><td>7.6</td></tr>
+<tr><td>80% defenders initial 15</td><td>14.8</td><td>-0.2</td><td>0%</td><td>100%</td><td>0%</td><td>1.0</td></tr>
+<tr><td>80% defenders initial 25</td><td>23.9</td><td>-1.1</td><td>0%</td><td>86%</td><td>14%</td><td>7.8</td></tr>
+<tr><td>80% defenders initial 35</td><td>24.3</td><td>-10.7</td><td>0%</td><td>84%</td><td>16%</td><td>11.4</td></tr>
+<tr><td>80% defenders initial 45</td><td>28.5</td><td>-16.5</td><td>6%</td><td>76%</td><td>18%</td><td>14.7</td></tr>
+<tr><td>80% defenders initial 60</td><td>34.5</td><td>-25.5</td><td>22%</td><td>44%</td><td>34%</td><td>15.8</td></tr>
+</tbody></table>
+<h3>Interpretation</h3>
+<p>This test shows that the model can produce calming outcomes, but only under certain conditions.</p>
+<p>Defenders are most effective when:</p>
+<ul>
+<li>defender presence is very high</li>
+<li>toxicity is low</li>
+<li>profanity is low</li>
+<li>identity attack is low</li>
+<li>starting aggression is not already too close to the escalation threshold</li>
+</ul>
+<p>The most useful result is the toxicity sensitivity:</p>
+<ul>
+<li>At toxicity 0, 80% defenders calmed the situation in 100% of runs.</li>
+<li>At toxicity 10, 80% defenders calmed the situation in 82% of runs.</li>
+<li>At toxicity 25, outcomes became mixed.</li>
+<li>At toxicity 50 or higher, the situation escalated in 100% of runs.</li>
+</ul>
+<p>This suggests that toxicity is one of the strongest drivers in the current model.</p>
+<h2>Continual Learning Result</h2>
+<p>The continual learning run carried memory across 40 repeated simulations.</p>
+<p>The model learned strongly from repeated escalation outcomes. Because instigator actions were repeatedly associated with escalation, bully-support tendency increased across runs. Defender and silent tendencies became more negative because those actions were not consistently associated with reducing harm under the tested baseline scenario.</p>
+<p>In simple terms:</p>
+<p><strong>The model currently learns the behaviour that appears successful inside the simulated environment. Since the baseline environment escalates often, the learning system reinforces harmful support unless the reward design is adjusted to prioritise victim safety more strongly.</strong></p>
+<p>This is a valuable scientific finding because it shows that reward design matters. If the goal is bullying intervention, the reward system should not simply learn from whether escalation happened. It should be explicitly designed around reducing harm and supporting the victim.</p>
+<h2>Scientific Conclusion</h2>
+<p>The sensitivity analysis shows that the current Mesa simulation behaves consistently, but it is calibrated toward escalation under standard settings.</p>
+<p>The environment is most affected by:</p>
+<p>1. <strong>Toxicity and harmful-content pressure:</strong> higher toxicity causes faster escalation.</p>
+<p>2. <strong>Defender dominance:</strong> defenders can calm the situation, but mainly when they strongly outnumber instigators and the content is not too harmful.</p>
+<p>3. <strong>Neutral or silent behaviour:</strong> silence does not directly attack the victim, but it does not provide enough counter-pressure to stop escalation.</p>
+<p>4. <strong>Engagement pressure:</strong> likes and retweets increase the speed of escalation.</p>
+<p>5. <strong>Learning design:</strong> agents learn from outcomes, so reward design strongly shapes future behaviour.</p>
+<h2>Recommended Model Improvements</h2>
+<p>For the next version, the model should be recalibrated so the dashboard shows a wider range of realistic outcomes.</p>
+<p>Recommended changes:</p>
+<ul>
+<li>Reduce the constant harmful-content pressure slightly.</li>
+<li>Increase the effect of defenders when they act together.</li>
+<li>Add a collective defence effect when defenders are the clear majority.</li>
+<li>Penalise instigator learning more strongly when the final outcome is harmful.</li>
+<li>Reward defender behaviour based on victim safety, not only immediate bullying-level decrease.</li>
+<li>Add a moderation or reporting effect when toxicity is very high.</li>
+</ul>
+<p>These changes would make the simulation better for scientific demonstration because it would show not only escalation, but also realistic pathways to calming and unresolved outcomes.</p>
+<h2>Output Files</h2>
+<p>The numerical results were saved in:</p>
+<ul>
+<li>`sensitivity_outputs/sensitivity_runs.csv`</li>
+<li>`sensitivity_outputs/sensitivity_summary.csv`</li>
+<li>`sensitivity_outputs/targeted_calming_summary.csv`</li>
+<li>`sensitivity_outputs/trajectory_summary.csv`</li>
+<li>`sensitivity_outputs/continual_learning_runs.csv`</li>
+</ul>
+</body>
+</html>

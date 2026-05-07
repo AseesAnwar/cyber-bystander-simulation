@@ -22,5 +22,17 @@ run_high_anonymity.csv
 run_prosocial.csv
 thread_summary.csv
 
+# Share/export bundles and office docs
+*.zip
+*.docx
+*.xlsx
+
+# Local export folders / unrelated artifacts
+dashboard_exports/
+tmp_export/
+linkedin-multivariate-post/
+Asees_Anwar_CV_Rebuilt.html
+Asees_Anwar_CV_Rebuilt.docx
+
 # Notebook and misc cache
 .ipynb_checkpoints/

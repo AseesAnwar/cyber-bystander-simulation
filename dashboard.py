@@ -1,656 +1,550 @@
+"""Plain-English cyberbystander simulation dashboard with ToM, RL, and CL.
+
+This page remains a behavioural simulation environment, not a prediction tool.
+It adds three richer behaviour layers:
+- Theory of Mind: agents react to what they think others may do
+- Reinforcement Learning: agents adjust action tendencies from outcomes
+- Continual Learning: agents can keep some experience across repeated runs
+"""
+
 from __future__ import annotations
 
-import io
 import os
-from pathlib import Path
+import random
+import time
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
 
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import pandas as pd
 import streamlit as st
 
-from model import simulate_thread
+from abm_explanations import build_dataset_connection_text
+from abm_ui_helpers import (
+    build_action_share_chart,
+    build_bullying_chart,
+    build_environment_figure,
+    build_role_breakdown_chart,
+    build_story_table,
+    build_tendency_chart,
+    composition_table,
+    learning_history_table,
+)
+from cyby23_learning import build_cyby23_learning_profile, build_learning_state_from_profile
+from mesa_bridge import SimulationConfig, build_preview_state, simulate_scenario
+from mesa_learning import reset_learning_state
 from preprocess_cyby23 import (
     DEFAULT_DATASET_PATH,
-    NORMALIZED_ROLE_ORDER,
     build_thread_records,
     clean_dataset,
     load_raw_dataset,
     preprocessing_summary,
     resolve_dataset_path,
 )
-from run_simulation import build_confusion_style_table, build_distribution_comparison, run_across_threads
 
 
 st.set_page_config(
-    page_title="CYBY23 Online Conversation Simulator",
+    page_title="Cyberbystander Simulation Environment",
     page_icon="🧭",
     layout="wide",
 )
 
-ROLE_COLORS = {
-    "reinforce": "#c2410c",
-    "defend": "#0f766e",
-    "neutral": "#64748b",
-    "unrelated": "#7c3aed",
+
+DEFAULTS = {
+    "dataset_path": DEFAULT_DATASET_PATH,
+    "total_bystanders": 24,
+    "instigator_pct": 24,
+    "defender_pct": 26,
+    "neutral_pct": 35,
+    "other_pct": 15,
+    "initial_aggression": 52,
+    "toxicity_level": 72,
+    "profanity_level": 55,
+    "identity_attack_level": 48,
+    "like_influence": 32,
+    "retweet_influence": 40,
+    "simulation_speed": 0.08,
+    "random_seed": 17,
+    "tom_influence_strength": 0.55,
+    "learning_rate": 0.30,
+    "reward_strength": 0.90,
+    "memory_retention_strength": 0.80,
+    "adaptation_speed": 0.35,
+    "carry_learning": True,
+    "dataset_risk_filter": "all",
+    "dataset_learning_strength": 0.70,
+    "dataset_profile": None,
+    "result": None,
 }
 
-PLAIN_ROLE_LABELS = {
-    "reinforce": "Support the harmful post",
-    "defend": "Push back against it",
-    "neutral": "Stay neutral",
-    "unrelated": "Say something unrelated",
-}
 
-SCENARIO_OPTIONS = {
-    "all": "All conversations",
-    "low": "Less harmful",
-    "medium": "Mixed",
-    "high": "More harmful",
-}
+def initialize_state() -> None:
+    for key, value in DEFAULTS.items():
+        st.session_state.setdefault(key, value)
+    st.session_state.setdefault("learning_state", reset_learning_state())
 
 
-@st.cache_data(show_spinner=False)
-def load_threads(dataset_path: str) -> tuple[Path, list, dict[str, object]]:
+def load_dataset_defaults() -> None:
+    threads = load_thread_records_from_state()
+    if not threads:
+        return
+    rng = random.Random(st.session_state["random_seed"])
+    thread = rng.choice(threads)
+    counts = thread.observed_role_distribution
+    total = max(1, sum(counts.values()))
+    st.session_state["total_bystanders"] = total
+    st.session_state["instigator_pct"] = round((counts.get("reinforce", 0) / total) * 100)
+    st.session_state["defender_pct"] = round((counts.get("defend", 0) / total) * 100)
+    st.session_state["neutral_pct"] = round((counts.get("neutral", 0) / total) * 100)
+    st.session_state["other_pct"] = round((counts.get("unrelated", 0) / total) * 100)
+    st.session_state["initial_aggression"] = round(
+        min(
+            100,
+            25
+            + 45 * thread.source_toxicity
+            + 12 * thread.source_profanity
+            + 10 * thread.source_identity_attack,
+        )
+    )
+    st.session_state["toxicity_level"] = round(thread.source_toxicity * 100)
+    st.session_state["profanity_level"] = round(thread.source_profanity * 100)
+    st.session_state["identity_attack_level"] = round(thread.source_identity_attack * 100)
+    st.session_state["like_influence"] = min(100, round(thread.source_favorite_count * 5))
+    st.session_state["retweet_influence"] = min(100, round(thread.source_retweet_count * 10))
+
+
+def load_thread_records_from_state():
+    resolved_path = resolve_dataset_path(st.session_state["dataset_path"])
+    raw_df = load_raw_dataset(resolved_path)
+    cleaned_df = clean_dataset(raw_df)
+    return build_thread_records(cleaned_df)
+
+
+def learn_from_cyby23_dataset() -> None:
+    threads = load_thread_records_from_state()
+    profile = build_cyby23_learning_profile(
+        threads,
+        risk_filter=st.session_state["dataset_risk_filter"],
+    )
+    st.session_state["learning_state"] = build_learning_state_from_profile(
+        profile,
+        strength=float(st.session_state["dataset_learning_strength"]),
+    )
+    st.session_state["dataset_profile"] = profile
+    st.session_state["total_bystanders"] = max(8, min(80, round(profile.labelled_reply_count / max(1, profile.thread_count))))
+    st.session_state["instigator_pct"] = round(profile.agent_role_percentages["instigator"])
+    st.session_state["defender_pct"] = round(profile.agent_role_percentages["defender"])
+    st.session_state["neutral_pct"] = round(profile.agent_role_percentages["neutral"])
+    st.session_state["other_pct"] = round(profile.agent_role_percentages["other"])
+    st.session_state["initial_aggression"] = round(
+        min(
+            100,
+            25
+            + 45 * profile.mean_toxicity
+            + 12 * profile.mean_profanity
+            + 10 * profile.mean_identity_attack,
+        )
+    )
+    st.session_state["toxicity_level"] = round(profile.mean_toxicity * 100)
+    st.session_state["profanity_level"] = round(profile.mean_profanity * 100)
+    st.session_state["identity_attack_level"] = round(profile.mean_identity_attack * 100)
+    st.session_state["like_influence"] = min(100, round(profile.mean_favorites * 5))
+    st.session_state["retweet_influence"] = min(100, round(profile.mean_retweets * 10))
+    st.session_state["result"] = None
+
+
+def apply_preset(name: str) -> None:
+    if name == "reset":
+        for key, value in DEFAULTS.items():
+            if key != "result":
+                st.session_state[key] = value
+    elif name == "random":
+        rng = random.Random()
+        st.session_state["total_bystanders"] = rng.randint(12, 40)
+        st.session_state["instigator_pct"] = rng.randint(10, 45)
+        st.session_state["defender_pct"] = rng.randint(10, 45)
+        st.session_state["neutral_pct"] = rng.randint(10, 50)
+        st.session_state["other_pct"] = rng.randint(5, 25)
+        st.session_state["initial_aggression"] = rng.randint(35, 70)
+        st.session_state["toxicity_level"] = rng.randint(30, 95)
+        st.session_state["profanity_level"] = rng.randint(10, 90)
+        st.session_state["identity_attack_level"] = rng.randint(10, 90)
+        st.session_state["like_influence"] = rng.randint(0, 80)
+        st.session_state["retweet_influence"] = rng.randint(0, 80)
+        st.session_state["random_seed"] = rng.randint(1, 99999)
+    elif name == "defender":
+        st.session_state["instigator_pct"] = 15
+        st.session_state["defender_pct"] = 50
+        st.session_state["neutral_pct"] = 25
+        st.session_state["other_pct"] = 10
+    elif name == "neutral":
+        st.session_state["instigator_pct"] = 18
+        st.session_state["defender_pct"] = 18
+        st.session_state["neutral_pct"] = 50
+        st.session_state["other_pct"] = 14
+    elif name == "instigator":
+        st.session_state["instigator_pct"] = 48
+        st.session_state["defender_pct"] = 16
+        st.session_state["neutral_pct"] = 24
+        st.session_state["other_pct"] = 12
+
+
+def current_config() -> SimulationConfig:
+    return SimulationConfig(
+        total_bystanders=int(st.session_state["total_bystanders"]),
+        instigator_pct=float(st.session_state["instigator_pct"]),
+        defender_pct=float(st.session_state["defender_pct"]),
+        neutral_pct=float(st.session_state["neutral_pct"]),
+        other_pct=float(st.session_state["other_pct"]),
+        initial_aggression=float(st.session_state["initial_aggression"]),
+        toxicity_level=float(st.session_state["toxicity_level"]),
+        profanity_level=float(st.session_state["profanity_level"]),
+        identity_attack_level=float(st.session_state["identity_attack_level"]),
+        like_influence=float(st.session_state["like_influence"]),
+        retweet_influence=float(st.session_state["retweet_influence"]),
+        simulation_speed=float(st.session_state["simulation_speed"]),
+        random_seed=int(st.session_state["random_seed"]),
+        tom_influence_strength=float(st.session_state["tom_influence_strength"]),
+        learning_rate=float(st.session_state["learning_rate"]),
+        reward_strength=float(st.session_state["reward_strength"]),
+        memory_retention_strength=float(st.session_state["memory_retention_strength"]),
+        adaptation_speed=float(st.session_state["adaptation_speed"]),
+        carry_learning=bool(st.session_state["carry_learning"]),
+    )
+
+
+def run_and_animate(config: SimulationConfig):
+    result = simulate_scenario(config, st.session_state["learning_state"])
+    st.session_state["learning_state"] = result.updated_learning_state
+
+    environment_placeholder = st.empty()
+    chart_placeholder = st.empty()
+    story_placeholder = st.empty()
+
+    visible_history = [result.bullying_history[0]]
+    visible_rows = []
+
+    for index, snapshot in enumerate(result.snapshots, start=1):
+        visible_history.append(result.bullying_history[index])
+        environment_placeholder.pyplot(
+            build_environment_figure(result.agents, snapshot),
+            use_container_width=True,
+        )
+        chart_placeholder.pyplot(
+            build_bullying_chart(visible_history),
+            use_container_width=True,
+        )
+        visible_rows.append({"Step": snapshot.step, "What happened": snapshot.story_line})
+        story_placeholder.dataframe(visible_rows, use_container_width=True, hide_index=True)
+        if config.simulation_speed > 0:
+            time.sleep(config.simulation_speed)
+
+    return result
+
+
+def render_outcome_card(result) -> None:
+    if result.final_outcome == "Got worse":
+        text_color = "#7f1d1d"
+        background = "#fee2e2"
+    elif result.final_outcome == "Calmed down":
+        text_color = "#14532d"
+        background = "#dcfce7"
+    else:
+        text_color = "#334155"
+        background = "#e2e8f0"
+
+    st.markdown(
+        f"""
+        <div style="padding: 1rem 1.2rem; border-radius: 14px; background: {background}; border: 1px solid {text_color}33;">
+            <div style="font-size: 0.85rem; color: {text_color}; font-weight: 600;">Final outcome</div>
+            <div style="font-size: 1.6rem; color: {text_color}; font-weight: 700; margin-top: 0.25rem;">{result.final_outcome}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def dataset_note(dataset_path: str) -> tuple[str, str]:
     resolved_path = resolve_dataset_path(dataset_path)
     raw_df = load_raw_dataset(resolved_path)
     cleaned_df = clean_dataset(raw_df)
-    thread_records = build_thread_records(cleaned_df)
     summary = preprocessing_summary(cleaned_df)
-    return resolved_path, thread_records, summary
-
-
-@st.cache_data(show_spinner=False)
-def run_batch(dataset_path: str, scenario_mode: str, max_threads: int | None, seed: int, learning_mode: bool):
-    return run_across_threads(
-        dataset_path=dataset_path,
-        scenario_mode=scenario_mode,
-        max_threads=max_threads,
-        seed=seed,
-        learning_mode=learning_mode,
+    message = (
+        f"The dashboard is connected to the CYBY23 dataset, which contains `{summary['source_posts']}` online discussion starters and `{summary['labelled_bystander_replies']}` labelled replies. "
+        "The dataset shows what kinds of bystanders appear in real online discussions. "
+        "The extra learning layers here help simulate how behaviour may change with experience."
     )
+    return str(resolved_path), message
 
 
-@st.cache_data(show_spinner=False)
-def run_single_conversation(
-    dataset_path: str,
-    conversation_id: str,
-    seed: int,
-    learning_mode: bool,
-):
-    _, conversation_records, _ = load_threads(dataset_path)
-    selected = next(record for record in conversation_records if record.thread_id == conversation_id)
-    model, result = simulate_thread(selected, seed=seed, learning_mode=learning_mode, learner_registry={})
-    return selected, model.get_model_frame(), model.get_action_history_frame(), result
+initialize_state()
 
-
-def dataframe_to_csv_bytes(df: pd.DataFrame) -> bytes:
-    buffer = io.StringIO()
-    df.to_csv(buffer, index=False)
-    return buffer.getvalue().encode("utf-8")
-
-
-def rename_role(role: str) -> str:
-    return PLAIN_ROLE_LABELS.get(role, role)
-
-
-def metric_help() -> dict[str, str]:
-    return {
-        "conversations": "How many separate online conversations are included in this run.",
-        "accuracy": "How often the model matched the real reply type in the labelled data.",
-        "hostility": "How much the conversation becomes more hostile as replies unfold.",
-        "pushback": "How much people push back against the harmful original post.",
-        "replies": "How many labelled replies from real data are included in the dataset being used.",
-        "harm": "How toxic or hostile the original post appears.",
-        "moderation": "Whether the model thinks the conversation would likely be flagged for moderation.",
-        "repeat": "Keeps the same random choices so you can compare results fairly.",
-        "learning_mode": "Turns on simplified Theory of Mind, reinforcement learning, and continual learning memory.",
-        "reward": "A simple learning signal that rewards harmful reinforcement when hostility grows and rewards defence when hostility falls.",
-    }
-
-
-def build_distribution_figure(comparison_df: pd.DataFrame, title: str):
-    fig, ax = plt.subplots(figsize=(7, 4))
-    x = range(len(comparison_df))
-    width = 0.35
-    ax.bar(
-        [value - width / 2 for value in x],
-        comparison_df["observed"],
-        width=width,
-        label="Real data",
-        color="#1d4ed8",
-    )
-    ax.bar(
-        [value + width / 2 for value in x],
-        comparison_df["simulated"],
-        width=width,
-        label="Model prediction",
-        color="#f97316",
-    )
-    ax.set_xticks(list(x))
-    ax.set_xticklabels([rename_role(role) for role in comparison_df["role"]], rotation=12, ha="right")
-    ax.set_ylabel("Number of replies")
-    ax.set_title(title)
-    ax.legend()
-    fig.tight_layout()
-    return fig
-
-
-def build_conversation_scatter_figure(results_df: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(7, 4))
-    scatter = ax.scatter(
-        results_df["source_toxicity"],
-        results_df["escalation_score"],
-        c=results_df["defence_score"],
-        cmap="viridis",
-        edgecolors="black",
-        alpha=0.85,
-    )
-    ax.set_xlabel("Harm level of original post")
-    ax.set_ylabel("How much the conversation becomes more hostile")
-    ax.set_title("Do more harmful posts lead to worse conversations?")
-    color_bar = fig.colorbar(scatter, ax=ax)
-    color_bar.set_label("How much people push back")
-    fig.tight_layout()
-    return fig
-
-
-def build_conversation_role_figure(conversation_record, result):
-    real_counts = [conversation_record.observed_role_distribution.get(role, 0) for role in NORMALIZED_ROLE_ORDER]
-    predicted_counts = [result.simulated_counts.get(role, 0) for role in NORMALIZED_ROLE_ORDER]
-    fig, ax = plt.subplots(figsize=(7, 4))
-    x = range(len(NORMALIZED_ROLE_ORDER))
-    width = 0.35
-    ax.bar([value - width / 2 for value in x], real_counts, width=width, color="#2563eb", label="Real data")
-    ax.bar([value + width / 2 for value in x], predicted_counts, width=width, color="#ea580c", label="Model prediction")
-    ax.set_xticks(list(x))
-    ax.set_xticklabels([rename_role(role) for role in NORMALIZED_ROLE_ORDER], rotation=12, ha="right")
-    ax.set_ylabel("Number of replies")
-    ax.set_title("What happened in this conversation?")
-    ax.legend()
-    fig.tight_layout()
-    return fig
-
-
-def build_action_sequence_figure(action_history_df: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(8, 4))
-    for role in NORMALIZED_ROLE_ORDER:
-        role_df = action_history_df[action_history_df["simulated_role"] == role]
-        if role_df.empty:
-            continue
-        ax.scatter(
-            role_df["step"],
-            [rename_role(role)] * len(role_df),
-            color=ROLE_COLORS[role],
-            label=rename_role(role),
-            s=80,
-            alpha=0.85,
-        )
-    ax.set_xlabel("Order of replies")
-    ax.set_ylabel("What each person did")
-    ax.set_title("What each person did as the conversation unfolded")
-    handles, labels = ax.get_legend_handles_labels()
-    unique = dict(zip(labels, handles))
-    ax.legend(unique.values(), unique.keys(), loc="upper right")
-    fig.tight_layout()
-    return fig
-
-
-def build_q_value_figure(results_df: pd.DataFrame):
-    averages = [results_df[f"avg_q_{role}"].mean() for role in NORMALIZED_ROLE_ORDER]
-    fig, ax = plt.subplots(figsize=(7, 4))
-    ax.bar(
-        [rename_role(role) for role in NORMALIZED_ROLE_ORDER],
-        averages,
-        color=[ROLE_COLORS[role] for role in NORMALIZED_ROLE_ORDER],
-    )
-    ax.set_ylabel("Average learned value")
-    ax.set_title("Average Q-values by reply type")
-    ax.tick_params(axis="x", rotation=12)
-    fig.tight_layout()
-    return fig
-
-
-def build_learning_progress_figure(action_history_df: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(7, 4))
-    progress = (
-        action_history_df.groupby("step")[["reward"]]
-        .mean()
-        .rename(columns={"reward": "mean_reward"})
-        .reset_index()
-    )
-    ax.plot(progress["step"], progress["mean_reward"], marker="o", color="#0f766e")
-    ax.axhline(0.0, color="#94a3b8", linestyle="--", linewidth=1)
-    ax.set_xlabel("Simulation step")
-    ax.set_ylabel("Average reward")
-    ax.set_title("Learning progress over simulation steps")
-    fig.tight_layout()
-    return fig
-
-
-def build_action_distribution_over_time_figure(action_history_df: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(8, 4))
-    counts = (
-        action_history_df.groupby(["step", "simulated_role"])
-        .size()
-        .unstack(fill_value=0)
-        .reindex(columns=NORMALIZED_ROLE_ORDER, fill_value=0)
-    )
-    for role in NORMALIZED_ROLE_ORDER:
-        ax.plot(
-            counts.index,
-            counts[role],
-            marker="o",
-            label=rename_role(role),
-            color=ROLE_COLORS[role],
-        )
-    ax.set_xlabel("Simulation step")
-    ax.set_ylabel("Replies of each type")
-    ax.set_title("Distribution of reply types over time")
-    ax.legend()
-    fig.tight_layout()
-    return fig
-
-
-def build_before_after_figure(baseline_comparison_df: pd.DataFrame, learning_comparison_df: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(8, 4))
-    x = range(len(NORMALIZED_ROLE_ORDER))
-    width = 0.25
-    baseline_values = baseline_comparison_df["simulated"].tolist()
-    learning_values = learning_comparison_df["simulated"].tolist()
-    real_values = baseline_comparison_df["observed"].tolist()
-    ax.bar([value - width for value in x], real_values, width=width, label="Real data", color="#1d4ed8")
-    ax.bar(x, baseline_values, width=width, label="Before learning", color="#94a3b8")
-    ax.bar([value + width for value in x], learning_values, width=width, label="After learning", color="#f97316")
-    ax.set_xticks(list(x))
-    ax.set_xticklabels([rename_role(role) for role in NORMALIZED_ROLE_ORDER], rotation=12, ha="right")
-    ax.set_ylabel("Number of replies")
-    ax.set_title("Before vs after learning")
-    ax.legend()
-    fig.tight_layout()
-    return fig
-
-
-def interpret_distribution_chart(comparison_df: pd.DataFrame) -> str:
-    comparison_df = comparison_df.copy()
-    comparison_df["gap"] = comparison_df["simulated"] - comparison_df["observed"]
-    biggest_gap = comparison_df.iloc[comparison_df["gap"].abs().idxmax()]
-    role = rename_role(biggest_gap["role"]).lower()
-    if biggest_gap["gap"] > 0:
-        return f"In this run, the model predicted more replies that {role} than appeared in the real data."
-    if biggest_gap["gap"] < 0:
-        return f"In this run, the model predicted fewer replies that {role} than appeared in the real data."
-    return "In this run, the model stayed very close to the real reply mix."
-
-
-def interpret_scatter_chart(results_df: pd.DataFrame) -> str:
-    high_harm = results_df[results_df["source_toxicity"] >= results_df["source_toxicity"].median()]
-    low_harm = results_df[results_df["source_toxicity"] < results_df["source_toxicity"].median()]
-    if high_harm.empty or low_harm.empty:
-        return "This chart compares how the starting harm level relates to how the conversation develops."
-    if high_harm["escalation_score"].mean() > low_harm["escalation_score"].mean():
-        return "In this run, more harmful starting posts were more likely to lead to worse conversations."
-    return "In this run, more harmful starting posts did not clearly lead to worse conversations."
-
-
-def interpret_conversation_chart(conversation_record, result) -> str:
-    real_top = max(conversation_record.observed_role_distribution, key=conversation_record.observed_role_distribution.get)
-    predicted_top = max(result.simulated_counts, key=result.simulated_counts.get)
-    if real_top == predicted_top:
-        return f"For this example, the model got the main reply pattern right: most people {rename_role(real_top).lower()}."
-    return (
-        f"For this example, the real data mostly showed people who {rename_role(real_top).lower()}, "
-        f"but the model mostly predicted people who {rename_role(predicted_top).lower()}."
-    )
-
-
-def summarize_conversation(conversation_record, result, learning_mode: bool) -> str:
-    real_counts = conversation_record.observed_role_distribution
-    predicted_counts = result.simulated_counts
-    real_top = max(real_counts, key=real_counts.get)
-    predicted_top = max(predicted_counts, key=predicted_counts.get)
-    harm_text = (
-        "started with a more harmful post"
-        if conversation_record.source_toxicity >= 0.66
-        else "started with a less harmful post"
-        if conversation_record.source_toxicity < 0.33
-        else "started with a mixed-severity post"
-    )
-    summary = f"This conversation {harm_text}. In the real data, most people {rename_role(real_top).lower()}."
-    if real_top == predicted_top:
-        summary += " The model predicted a similar main pattern."
-    else:
-        summary += f" The model predicted more people would {rename_role(predicted_top).lower()}."
-    if learning_mode:
-        summary += " In learning mode, agents also form simple beliefs about the situation, update their Q-values, and remember recent outcomes."
-    return summary
-
-
-def interpret_q_values(results_df: pd.DataFrame) -> str:
-    average_q = {role: results_df[f"avg_q_{role}"].mean() for role in NORMALIZED_ROLE_ORDER}
-    best_role = max(average_q, key=average_q.get)
-    return f"Across this run, the learning system assigned the highest average value to replies that {rename_role(best_role).lower()}."
-
-
-def interpret_learning_progress(action_history_df: pd.DataFrame) -> str:
-    progress = action_history_df.groupby("step")["reward"].mean().reset_index()
-    if progress.empty:
-        return "No learning updates were recorded in this run."
-    if progress["reward"].iloc[-1] > progress["reward"].iloc[0]:
-        return "The average reward improved over the simulation steps, suggesting the agents were moving toward actions they found more useful."
-    return "The average reward did not clearly improve over the simulation steps, suggesting learning stayed modest in this run."
-
-
-def interpret_before_after(baseline_results_df: pd.DataFrame, learning_results_df: pd.DataFrame) -> str:
-    baseline_accuracy = baseline_results_df["accuracy"].mean()
-    learning_accuracy = learning_results_df["accuracy"].mean()
-    if learning_accuracy > baseline_accuracy:
-        return "After learning was enabled, the model matched the real reply labels more often than the baseline version."
-    if learning_accuracy < baseline_accuracy:
-        return "In this run, learning did not improve agreement with the real reply labels."
-    return "In this run, learning and the baseline produced similar agreement with the real reply labels."
-
-
-st.title("CYBY23 Online Conversation Simulator")
+st.title("Cyberbystander Simulation Environment")
 st.caption(
-    "This tool shows how people reacted to a harmful online post in real data, and how our simulation predicts they might react. It helps us test whether our model behaves realistically."
+    "This dashboard is designed as a behavioural simulation environment. It shows how different kinds of bystanders can make online bullying worse, help calm it down, or leave it unresolved."
 )
 
-with st.sidebar:
-    st.header("Choose what to explore")
-    dataset_path = st.text_input(
+st.markdown(
+    """
+    **How to use this page**
+
+    Use the controls to build a bystander environment, run the simulation, and then read the story of what happened.
+    The goal is to understand behaviour, not to predict exact real-world outcomes.
+    """
+)
+
+left_col, center_col, right_col = st.columns((1.1, 1.35, 1.05))
+
+with left_col:
+    st.subheader("Simulation controls")
+    st.caption("Change the people in the environment and the starting conditions.")
+
+    st.text_input(
         "Data file",
-        value=DEFAULT_DATASET_PATH,
-        help="Location of the CYBY23 spreadsheet. If the default file is not available, the app uses the local copy found on this machine.",
+        key="dataset_path",
+        help="The CYBY23 dataset provides the role patterns and aggression context behind this prototype.",
     )
-    scenario_label = st.selectbox(
-        "Conversation type",
-        list(SCENARIO_OPTIONS.values()),
-        index=0,
-        help="Filter to conversations that begin with less harmful, mixed, or more harmful original posts.",
-    )
-    scenario_mode = next(key for key, value in SCENARIO_OPTIONS.items() if value == scenario_label)
-    max_threads = st.slider(
-        "Number of conversations",
-        min_value=5,
-        max_value=90,
-        value=20,
-        step=5,
-        help=metric_help()["conversations"],
-    )
-    seed = st.number_input(
-        "Repeat setting",
-        min_value=0,
-        max_value=100000,
-        value=11,
-        step=1,
-        help=metric_help()["repeat"],
-    )
-    enable_learning = st.toggle(
-        "Enable Learning Mode (ToM + RL + CL)",
-        value=False,
-        help=metric_help()["learning_mode"],
-    )
-    st.caption("Use the same repeat setting if you want the same result again.")
-    run_button = st.button("Update view", type="primary", use_container_width=True)
 
-if run_button or "results_df" not in st.session_state:
-    resolved_path, conversation_records, dataset_summary = load_threads(dataset_path)
-    results_df, actions_df, summary, _ = run_batch(
-        dataset_path=dataset_path,
-        scenario_mode=scenario_mode,
-        max_threads=max_threads,
-        seed=int(seed),
-        learning_mode=enable_learning,
+    action_cols = st.columns(2)
+    if action_cols[0].button("Run Simulation", use_container_width=True, type="primary"):
+        st.session_state["result"] = "pending"
+    if action_cols[1].button("Reset", use_container_width=True):
+        apply_preset("reset")
+
+    preset_cols = st.columns(2)
+    if preset_cols[0].button("Random Scenario", use_container_width=True):
+        apply_preset("random")
+    if preset_cols[1].button("Load Dataset Example", use_container_width=True):
+        load_dataset_defaults()
+
+    st.selectbox(
+        "CYBY23 learning filter",
+        ["all", "low", "medium", "high"],
+        key="dataset_risk_filter",
+        help="Choose which CYBY23 thread risk group the simulation should learn from.",
     )
-    comparison_df = build_distribution_comparison(results_df)
-    confusion_df = build_confusion_style_table(actions_df)
-
-    baseline_results_df = baseline_actions_df = baseline_summary = baseline_comparison_df = None
-    if enable_learning:
-        baseline_results_df, baseline_actions_df, baseline_summary, _ = run_batch(
-            dataset_path=dataset_path,
-            scenario_mode=scenario_mode,
-            max_threads=max_threads,
-            seed=int(seed),
-            learning_mode=False,
-        )
-        baseline_comparison_df = build_distribution_comparison(baseline_results_df)
-
-    st.session_state["resolved_path"] = str(resolved_path)
-    st.session_state["conversation_records"] = conversation_records
-    st.session_state["dataset_summary"] = dataset_summary
-    st.session_state["results_df"] = results_df
-    st.session_state["actions_df"] = actions_df
-    st.session_state["summary"] = summary
-    st.session_state["comparison_df"] = comparison_df
-    st.session_state["confusion_df"] = confusion_df
-    st.session_state["scenario_mode"] = scenario_mode
-    st.session_state["seed"] = int(seed)
-    st.session_state["dataset_path"] = dataset_path
-    st.session_state["enable_learning"] = enable_learning
-    st.session_state["baseline_results_df"] = baseline_results_df
-    st.session_state["baseline_actions_df"] = baseline_actions_df
-    st.session_state["baseline_summary"] = baseline_summary
-    st.session_state["baseline_comparison_df"] = baseline_comparison_df
-
-resolved_path = st.session_state["resolved_path"]
-conversation_records = st.session_state["conversation_records"]
-dataset_summary = st.session_state["dataset_summary"]
-results_df = st.session_state["results_df"]
-actions_df = st.session_state["actions_df"]
-summary = st.session_state["summary"]
-comparison_df = st.session_state["comparison_df"]
-confusion_df = st.session_state["confusion_df"]
-current_seed = st.session_state["seed"]
-current_dataset_path = st.session_state["dataset_path"]
-enable_learning = st.session_state["enable_learning"]
-baseline_results_df = st.session_state["baseline_results_df"]
-baseline_actions_df = st.session_state["baseline_actions_df"]
-baseline_summary = st.session_state["baseline_summary"]
-baseline_comparison_df = st.session_state["baseline_comparison_df"]
-
-st.info(f"Using data from: `{resolved_path}`")
-
-st.subheader("A. What this tool does")
-st.write(
-    "This page compares real reply behaviour from the CYBY23 dataset with the reply behaviour predicted by the simulator. "
-    "You can first look at the big picture, then open one example conversation to see how the model behaves step by step."
-)
-with st.container(border=True):
-    st.markdown("**How to read this page**")
-    st.write("1. Start with the summary numbers to see the overall pattern.")
-    st.write("2. Compare real replies with model predictions in the charts.")
-    st.write("3. If learning mode is on, look at how Q-values and rewards change over time.")
-    st.write("4. Inspect one example conversation to see what happened in detail.")
-
-st.subheader("B. What data is being used")
-data_col1, data_col2 = st.columns((1, 1))
-with data_col1:
-    st.write(
-        f"The app is using `{dataset_summary['source_posts']}` original posts and "
-        f"`{dataset_summary['labelled_bystander_replies']}` labelled replies from the CYBY23 dataset."
+    st.slider(
+        "CYBY23 learning strength",
+        0.0,
+        2.0,
+        key="dataset_learning_strength",
+        help="Controls how strongly observed CYBY23 role patterns bias the agents' starting behaviour.",
     )
-    st.dataframe(
-        pd.DataFrame(
-            {
-                "Reply type in plain English": [rename_role(role) for role in NORMALIZED_ROLE_ORDER],
-                "Count in real data": [
-                    dataset_summary["normalized_role_counts"].get(role, 0) for role in NORMALIZED_ROLE_ORDER
-                ],
-            }
-        ),
-        use_container_width=True,
-        hide_index=True,
+    if st.button("Learn Behaviour From CYBY23", use_container_width=True):
+        learn_from_cyby23_dataset()
+
+    if st.session_state["dataset_profile"] is not None:
+        st.success(st.session_state["dataset_profile"].summary())
+
+    if st.button("Defender-Heavy Scenario", use_container_width=True):
+        apply_preset("defender")
+    if st.button("Neutral-Heavy Scenario", use_container_width=True):
+        apply_preset("neutral")
+    if st.button("Instigator-Heavy Scenario", use_container_width=True):
+        apply_preset("instigator")
+
+    st.markdown("**Bystanders in the simulation**")
+    st.number_input(
+        "Total number of bystanders",
+        min_value=4,
+        max_value=80,
+        key="total_bystanders",
+        help="How many people are watching the bullying situation.",
     )
-with data_col2:
-    st.write(
-        "The simulator focuses on conversations that begin with a harmful post and then models how people replying might respond."
+    st.slider(
+        "How many bystanders are supporting the bully",
+        0,
+        100,
+        key="instigator_pct",
+        help="A higher value means more people actively help the bullying continue.",
     )
-    if enable_learning:
-        st.write(
-            "Learning mode adds three simple ideas: agents infer what is happening, learn from rewards, and remember recent outcomes."
-        )
+    st.slider(
+        "How many bystanders are supporting the victim",
+        0,
+        100,
+        key="defender_pct",
+        help="A higher value means more people try to push back against the harm.",
+    )
+    st.slider(
+        "How many people stay silent",
+        0,
+        100,
+        key="neutral_pct",
+        help="Silent bystanders do not intervene, which can make it easier for bullying to keep going.",
+    )
+    st.slider(
+        "How many unrelated people are present",
+        0,
+        100,
+        key="other_pct",
+        help="These people do not meaningfully affect the conflict.",
+    )
+
+    st.markdown("**Starting conditions**")
+    st.slider(
+        "Starting bullying level",
+        0,
+        100,
+        key="initial_aggression",
+        help="How intense the harmful situation is at the beginning.",
+    )
+    st.slider(
+        "Toxicity level",
+        0,
+        100,
+        key="toxicity_level",
+        help="How harsh or hostile the harmful content is.",
+    )
+    st.slider(
+        "Profanity level",
+        0,
+        100,
+        key="profanity_level",
+        help="How much insulting or offensive language is present.",
+    )
+    st.slider(
+        "Identity attack level",
+        0,
+        100,
+        key="identity_attack_level",
+        help="How much the harmful content targets identity or personal background.",
+    )
+    st.slider(
+        "Engagement boost from likes",
+        0,
+        100,
+        key="like_influence",
+        help="A higher value means visible approval can amplify the bullying pressure.",
+    )
+    st.slider(
+        "Engagement boost from retweets",
+        0,
+        100,
+        key="retweet_influence",
+        help="A higher value means sharing and spread can amplify the bullying pressure.",
+    )
+    st.slider(
+        "Simulation speed",
+        0.0,
+        0.5,
+        key="simulation_speed",
+        help="Controls how quickly the simulation plays through each step.",
+    )
+    st.number_input(
+        "Random seed",
+        min_value=1,
+        max_value=99999,
+        key="random_seed",
+        help="Keeps the same simulation path if you want to repeat the same run.",
+    )
+
+    st.markdown("**Advanced behaviour settings**")
+    st.caption("These settings control how agents think, learn, and remember.")
+    st.slider(
+        "ToM influence strength",
+        0.0,
+        1.0,
+        key="tom_influence_strength",
+        help="Some people are influenced by what they think others will do.",
+    )
+    st.slider(
+        "Learning rate",
+        0.0,
+        1.0,
+        key="learning_rate",
+        help="How quickly agents change behaviour after a result.",
+    )
+    st.slider(
+        "Reward strength",
+        0.0,
+        1.5,
+        key="reward_strength",
+        help="How strongly good or bad outcomes shape future behaviour.",
+    )
+    st.slider(
+        "Memory retention strength",
+        0.0,
+        1.0,
+        key="memory_retention_strength",
+        help="How much past experience agents keep for future runs.",
+    )
+    st.slider(
+        "Adaptation speed",
+        0.0,
+        1.0,
+        key="adaptation_speed",
+        help="How quickly old habits change when the situation changes.",
+    )
+    st.toggle(
+        "Carry learning into next run",
+        key="carry_learning",
+        help="Agents do not start from zero every time. They carry some experience from earlier runs into new situations.",
+    )
+    if st.button("Reset learning", use_container_width=True):
+        st.session_state["learning_state"] = reset_learning_state()
+
+with center_col:
+    st.subheader("Simulation environment")
+    st.caption("This is the main simulation space. The abuser, victim, and bystanders are shown here as agents in one environment.")
+
+    config = current_config()
+    if st.session_state["result"] == "pending":
+        with st.spinner("Running simulation..."):
+            st.session_state["result"] = run_and_animate(config)
+    elif st.session_state["result"] is None:
+        preview_state = build_preview_state(config)
+        st.pyplot(build_environment_figure(preview_state.agents, None), use_container_width=True)
+        st.pyplot(build_bullying_chart(preview_state.bullying_history), use_container_width=True)
+        st.caption("Run the simulation to watch how the bystanders influence the situation over time.")
     else:
-        st.write("Baseline mode uses transparent rules without learning.")
+        result = st.session_state["result"]
+        st.pyplot(build_environment_figure(result.agents, result.snapshots[-1] if result.snapshots else None), use_container_width=True)
+        st.pyplot(build_bullying_chart(result.bullying_history), use_container_width=True)
+        st.caption("The center panel lets you watch the environment change step by step, like a simple Mesa-style simulation view.")
 
-st.subheader("C. Overall results")
-metric_cols = st.columns(6 if enable_learning else 5)
-metric_cols[0].metric("Conversations simulated", int(summary["simulated_threads"]), help=metric_help()["conversations"])
-metric_cols[1].metric("Match with real data", f"{summary['mean_accuracy']:.3f}", help=metric_help()["accuracy"])
-metric_cols[2].metric(
-    "How much conversations become more hostile",
-    f"{summary['mean_escalation_score']:.3f}",
-    help=metric_help()["hostility"],
-)
-metric_cols[3].metric(
-    "How much people push back",
-    f"{summary['mean_defence_score']:.3f}",
-    help=metric_help()["pushback"],
-)
-metric_cols[4].metric(
-    "Labelled replies available",
-    int(dataset_summary["labelled_bystander_replies"]),
-    help=metric_help()["replies"],
-)
-if enable_learning:
-    metric_cols[5].metric("Average learning reward", f"{summary['mean_reward']:.3f}", help=metric_help()["reward"])
-st.caption("These summary numbers give a quick view of how the model behaved across all conversations in this run.")
+    st.markdown("**Story mode**")
+    st.caption("This reads like a simple explanation of what happened at each step.")
+    if st.session_state["result"] not in (None, "pending"):
+        st.dataframe(build_story_table(st.session_state["result"]), use_container_width=True, hide_index=True)
+    else:
+        st.info("Run a scenario to generate the step-by-step story.")
 
-st.subheader("D. Real behaviour vs model behaviour")
-comparison_col, pattern_col = st.columns((1, 1))
-with comparison_col:
-    st.pyplot(build_distribution_figure(comparison_df, "Real replies vs predicted replies"), use_container_width=True)
-    st.caption(interpret_distribution_chart(comparison_df))
-with pattern_col:
-    st.pyplot(build_conversation_scatter_figure(results_df), use_container_width=True)
-    st.caption(interpret_scatter_chart(results_df))
+with right_col:
+    st.subheader("Results and explanation")
+    st.caption("This panel explains the outcome in simple language and connects it back to the dataset context.")
 
-if enable_learning and baseline_results_df is not None and baseline_comparison_df is not None:
-    st.subheader("Learning mode comparison")
-    learning_col1, learning_col2 = st.columns((1, 1))
-    with learning_col1:
-        st.pyplot(build_before_after_figure(baseline_comparison_df, comparison_df), use_container_width=True)
-        st.caption(interpret_before_after(baseline_results_df, results_df))
-    with learning_col2:
-        st.pyplot(build_q_value_figure(results_df), use_container_width=True)
-        st.caption(interpret_q_values(results_df))
+    resolved_dataset_path, dataset_message = dataset_note(st.session_state["dataset_path"])
+    st.markdown("**How this connects to the real dataset**")
+    st.write(dataset_message)
+    st.caption(build_dataset_connection_text())
 
-    learning_col3, learning_col4 = st.columns((1, 1))
-    with learning_col3:
-        st.pyplot(build_learning_progress_figure(actions_df), use_container_width=True)
-        st.caption(interpret_learning_progress(actions_df))
-    with learning_col4:
-        st.pyplot(build_action_distribution_over_time_figure(actions_df), use_container_width=True)
-        st.caption("This chart shows how the mix of reply types changed as the simulated conversations unfolded.")
+    if st.session_state["result"] not in (None, "pending"):
+        result = st.session_state["result"]
+        render_outcome_card(result)
 
-st.subheader("E. Example conversation walkthrough")
-filtered_conversation_ids = results_df["thread_id"].tolist()
-conversation_lookup = {
-    record.thread_id: record for record in conversation_records if record.thread_id in filtered_conversation_ids
-}
-selected_conversation_id = st.selectbox(
-    "Choose one conversation to inspect",
-    filtered_conversation_ids,
-    index=0,
-    format_func=lambda value: (
-        f"{value} | {SCENARIO_OPTIONS.get(conversation_lookup[value].risk_level, conversation_lookup[value].risk_level)}"
-        f" | {len(conversation_lookup[value].bystanders)} people replying"
-    ),
-    help="Pick one conversation so you can compare the real replies with the model's predicted replies.",
-)
+        st.markdown("**Who is in this environment**")
+        st.caption("This shows the bystander mix used in the simulation.")
+        st.dataframe(composition_table(result), use_container_width=True, hide_index=True)
+        st.pyplot(build_role_breakdown_chart(result), use_container_width=True)
 
-selected_conversation, model_frame, action_history_df, conversation_result = run_single_conversation(
-    dataset_path=current_dataset_path,
-    conversation_id=selected_conversation_id,
-    seed=current_seed,
-    learning_mode=enable_learning,
-)
+        st.markdown("**What happened here?**")
+        st.write(result.explanation)
 
-conversation_metric_cols = st.columns(5 if enable_learning else 4)
-conversation_metric_cols[0].metric(
-    "Harm level of original post",
-    f"{selected_conversation.source_toxicity:.3f}",
-    help=metric_help()["harm"],
-)
-conversation_metric_cols[1].metric(
-    "How much the conversation becomes more hostile",
-    f"{conversation_result.escalation_score:.3f}",
-    help=metric_help()["hostility"],
-)
-conversation_metric_cols[2].metric(
-    "How much people push back",
-    f"{conversation_result.defence_score:.3f}",
-    help=metric_help()["pushback"],
-)
-conversation_metric_cols[3].metric(
-    "Would the system flag this conversation for moderation?",
-    "Yes" if conversation_result.moderator_triggered else "No",
-    help=metric_help()["moderation"],
-)
-if enable_learning:
-    conversation_metric_cols[4].metric(
-        "Average reward in this conversation",
-        f"{conversation_result.mean_reward:.3f}",
-        help=metric_help()["reward"],
-    )
+        st.markdown("**What this means in simple terms**")
+        st.write(result.simple_takeaway)
 
-st.write(summarize_conversation(selected_conversation, conversation_result, enable_learning))
+        st.markdown("**How learning changed behaviour across runs**")
+        st.caption("These charts show whether agents became more defender-like, more bully-supporting, or more silent over repeated runs.")
+        run_history = st.session_state["learning_state"].run_history
+        st.pyplot(build_tendency_chart(run_history), use_container_width=True)
+        st.pyplot(build_action_share_chart(run_history), use_container_width=True)
+        st.dataframe(learning_history_table(run_history), use_container_width=True, hide_index=True)
+    else:
+        st.info("Run a scenario to see the outcome, explanation, and learning panels.")
 
-conversation_chart_col, sequence_col = st.columns((1, 1))
-with conversation_chart_col:
-    st.pyplot(build_conversation_role_figure(selected_conversation, conversation_result), use_container_width=True)
-    st.caption(interpret_conversation_chart(selected_conversation, conversation_result))
-with sequence_col:
-    st.pyplot(build_action_sequence_figure(action_history_df), use_container_width=True)
-    st.caption("This shows the model's predicted reply type for each person in the order they appeared in the conversation.")
-
-st.markdown("**Original post**")
-st.write(selected_conversation.source_text)
-st.caption("This is the starting message that the rest of the conversation responds to.")
-
-st.subheader("Why this matters")
+st.subheader("Why this dashboard matters")
 st.write(
-    "This prototype helps us test assumptions about online bystander behaviour before building more advanced AI models. "
-    "It gives us a baseline we can improve later."
+    "This simulation helps us explore how the composition and timing of bystander behaviour can influence cyberbullying outcomes. "
+    "It is designed to support understanding of behavioural dynamics rather than predict exact real-world outcomes."
 )
-
-with st.expander("F. Advanced tables for detailed inspection", expanded=False):
-    st.write("This section keeps the technical detail available for academic review without overwhelming the main page.")
-    st.markdown("**Where the model matched or mismatched real reply types**")
-    st.dataframe(confusion_df, use_container_width=True)
-    st.caption("Rows show the real reply type, and columns show what the model predicted instead.")
-
-    st.markdown("**Conversation-by-conversation results**")
-    st.dataframe(results_df, use_container_width=True)
-    st.download_button(
-        "Download conversation results CSV",
-        data=dataframe_to_csv_bytes(results_df),
-        file_name="conversation_results.csv",
-        mime="text/csv",
-        use_container_width=True,
-    )
-
-    st.markdown("**Step-by-step model actions for the selected conversation**")
-    st.dataframe(action_history_df, use_container_width=True)
-    st.download_button(
-        "Download selected conversation action history CSV",
-        data=dataframe_to_csv_bytes(action_history_df),
-        file_name=f"conversation_{selected_conversation_id}_action_history.csv",
-        mime="text/csv",
-        use_container_width=True,
-    )
-
-    st.markdown("**Internal model timeline for the selected conversation**")
-    st.dataframe(model_frame, use_container_width=True)
-
-    st.markdown("**Full batch action history**")
-    st.dataframe(actions_df, use_container_width=True)
-
-    if enable_learning and baseline_results_df is not None:
-        st.markdown("**Baseline results for comparison**")
-        st.dataframe(baseline_results_df, use_container_width=True)
