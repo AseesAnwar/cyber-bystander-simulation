@@ -69,6 +69,64 @@ class CoreModelTests(unittest.TestCase):
         self.assertEqual(first.bullying_history, second.bullying_history)
         self.assertEqual(first.final_outcome, second.final_outcome)
 
+    def test_defender_dominance_reduces_low_harm_outcomes(self):
+        low_defender_levels = []
+        high_defender_levels = []
+
+        for seed in range(1, 9):
+            low_defender_config = SimulationConfig(
+                total_bystanders=20,
+                instigator_pct=60,
+                defender_pct=20,
+                neutral_pct=10,
+                other_pct=10,
+                initial_aggression=25,
+                toxicity_level=0,
+                profanity_level=0,
+                identity_attack_level=0,
+                like_influence=0,
+                retweet_influence=0,
+                simulation_speed=0.0,
+                random_seed=seed,
+                tom_influence_strength=0.5,
+                learning_rate=0.3,
+                reward_strength=1.0,
+                memory_retention_strength=0.8,
+                adaptation_speed=0.4,
+                carry_learning=False,
+            )
+            high_defender_config = SimulationConfig(
+                total_bystanders=20,
+                instigator_pct=0,
+                defender_pct=80,
+                neutral_pct=10,
+                other_pct=10,
+                initial_aggression=25,
+                toxicity_level=0,
+                profanity_level=0,
+                identity_attack_level=0,
+                like_influence=0,
+                retweet_influence=0,
+                simulation_speed=0.0,
+                random_seed=seed,
+                tom_influence_strength=0.5,
+                learning_rate=0.3,
+                reward_strength=1.0,
+                memory_retention_strength=0.8,
+                adaptation_speed=0.4,
+                carry_learning=False,
+            )
+
+            low_result = simulate_scenario(low_defender_config, MesaLearningState())
+            high_result = simulate_scenario(high_defender_config, MesaLearningState())
+            low_defender_levels.append(low_result.bullying_history[-1])
+            high_defender_levels.append(high_result.bullying_history[-1])
+
+        self.assertLess(
+            sum(high_defender_levels) / len(high_defender_levels),
+            sum(low_defender_levels) / len(low_defender_levels),
+        )
+
     def test_bullying_history_stays_in_bounds(self):
         config = SimulationConfig(
             total_bystanders=16,
