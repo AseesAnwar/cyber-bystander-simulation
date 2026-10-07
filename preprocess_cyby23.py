@@ -9,10 +9,9 @@ import numpy as np
 import pandas as pd
 
 
-DEFAULT_DATASET_PATH = "/mnt/data/CYBERBYSTANDER (CYBY23) dataset.xlsx"
+DEFAULT_DATASET_PATH = "data/CYBERBYSTANDER (CYBY23) dataset.xlsx"
 FALLBACK_DATASET_CANDIDATES = [
     Path(DEFAULT_DATASET_PATH),
-    Path("/Users/aseesanwar/Downloads/archive/CYBERBYSTANDER (CYBY23) dataset.xlsx"),
 ]
 
 NUMERIC_COLUMNS = [
@@ -92,7 +91,7 @@ def resolve_dataset_path(dataset_path: str | Path | None = None) -> Path:
                     return candidate
         raise FileNotFoundError(
             f"Dataset not found at '{path}'. "
-            f"Expected spreadsheet path defaults to '{DEFAULT_DATASET_PATH}'."
+            f"Pass --dataset-path explicitly or place the spreadsheet at '{DEFAULT_DATASET_PATH}'."
         )
 
     for candidate in FALLBACK_DATASET_CANDIDATES:
