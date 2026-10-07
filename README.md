@@ -118,6 +118,8 @@ You can also provide an explicit path when running preprocessing or other comman
 
 The source dataset is not included in this public repository unless redistribution permission is confirmed.
 
+The dashboards can still run in **manual what-if mode without the spreadsheet**. Dataset-specific example loading and CYBY23 calibration become available when a valid local file is supplied.
+
 ## Model Interpretation
 
 The canonical Mesa implementation is designed as a transparent **what-if model**.
@@ -266,11 +268,15 @@ outputs/multi_seed_results.csv
 ```text
 docs/
 ├── ARCHITECTURE.md
+├── CALIBRATION_FINDINGS.md
 ├── MODEL_LIMITATIONS.md
 ├── PARAMETERS.md
 ├── SENSITIVITY_ANALYSIS.md
 └── archive/
     └── historical project notes, proposals, prompt logs, and handoff material
+
+data/
+└── README.md
 ```
 
 Historical university-development material is retained for transparency but moved out of the repository root so the canonical implementation is easy to identify.
