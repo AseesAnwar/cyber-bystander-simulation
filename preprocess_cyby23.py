@@ -14,6 +14,28 @@ FALLBACK_DATASET_CANDIDATES = [
     Path(DEFAULT_DATASET_PATH),
 ]
 
+REQUIRED_COLUMNS = [
+    "tweet_id",
+    "reply_id",
+    "created_at",
+    "text",
+    "user",
+    "user_id",
+    "sentiment",
+    "Bystander Roles Label",
+    "retweet_count",
+    "favorite_count",
+    "Insult",
+    "Threat",
+    "Identity_Attack",
+    "Profanity",
+    "Toxicity",
+    "Severe_Toxicity",
+    "polarity",
+    "subjectivity",
+    "Class label",
+]
+
 NUMERIC_COLUMNS = [
     "retweet_count",
     "favorite_count",
@@ -117,7 +139,18 @@ def load_raw_dataset(dataset_path: str | Path | None = None) -> pd.DataFrame:
     return df
 
 
+def validate_schema(df: pd.DataFrame) -> None:
+    """Fail early with a readable message when required CYBY23 columns are missing."""
+
+    missing = [column for column in REQUIRED_COLUMNS if column not in df.columns]
+    if missing:
+        raise ValueError(
+            "CYBY23 dataset is missing required column(s): " + ", ".join(missing)
+        )
+
+
 def clean_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    validate_schema(df)
     cleaned = df.copy()
     cleaned = cleaned.dropna(how="all").reset_index(drop=True)
 
