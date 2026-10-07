@@ -12,6 +12,11 @@ class PreprocessingTests(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             resolve_dataset_path("/definitely/not/a/real/cyby23-file.xlsx")
 
+    def test_missing_required_columns_raise_readable_error(self):
+        incomplete = pd.DataFrame({"tweet_id": ["1"]})
+        with self.assertRaisesRegex(ValueError, "missing required column"):
+            clean_dataset(incomplete)
+
     def test_role_labels_are_normalized(self):
         df = pd.DataFrame(
             {
