@@ -214,10 +214,14 @@ def current_config() -> SimulationConfig:
 
 
 def load_dataset_example() -> None:
-    resolved_path = resolve_dataset_path(st.session_state["td_dataset_path"])
-    raw_df = load_raw_dataset(resolved_path)
-    cleaned_df = clean_dataset(raw_df)
-    threads = build_thread_records(cleaned_df)
+    try:
+        resolved_path = resolve_dataset_path(st.session_state["td_dataset_path"])
+        raw_df = load_raw_dataset(resolved_path)
+        cleaned_df = clean_dataset(raw_df)
+        threads = build_thread_records(cleaned_df)
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        st.warning(f"CYBY23 dataset could not be loaded: {exc}")
+        return
     if not threads:
         st.warning("No dataset conversations were available to load.")
         return
