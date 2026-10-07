@@ -65,7 +65,7 @@ def run_across_threads(
             "escalation_score": result.escalation_score,
             "defence_score": result.defence_score,
             "moderator_triggered": result.moderator_triggered,
-            "accuracy": result.accuracy,
+            "role_agreement_rate": result.role_agreement_rate,
             "bystander_count": len(thread_record.bystanders),
             "learning_mode": learning_mode,
             "mean_reward": result.mean_reward,
@@ -84,7 +84,7 @@ def run_across_threads(
     actions_df = pd.concat(action_rows, ignore_index=True) if action_rows else pd.DataFrame()
     summary["scenario_mode"] = scenario_mode
     summary["simulated_threads"] = int(results_df.shape[0])
-    summary["mean_accuracy"] = round(float(results_df["accuracy"].mean()), 4)
+    summary["mean_role_agreement_rate"] = round(float(results_df["role_agreement_rate"].mean()), 4)
     summary["mean_escalation_score"] = round(float(results_df["escalation_score"].mean()), 4)
     summary["mean_defence_score"] = round(float(results_df["defence_score"].mean()), 4)
     summary["learning_mode"] = learning_mode
@@ -123,7 +123,11 @@ def print_metrics(results_df: pd.DataFrame, comparison_df: pd.DataFrame, confusi
     print("Simulation metrics")
     print("------------------")
     print(f"Threads simulated: {len(results_df)}")
-    print(f"Mean thread accuracy: {results_df['accuracy'].mean():.3f}")
+    print(
+        "Mean role agreement rate: "
+        f"{results_df['role_agreement_rate'].mean():.3f} "
+        "(descriptive reproduction metric; not predictive accuracy)"
+    )
     print(f"Mean escalation score: {results_df['escalation_score'].mean():.3f}")
     print(f"Mean defence score: {results_df['defence_score'].mean():.3f}")
     print(f"Mean reward: {results_df['mean_reward'].mean():.3f}")
