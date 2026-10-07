@@ -29,7 +29,11 @@ def main() -> None:
     print(f"Dataset used: {resolved_path}")
     print(f"Scenario mode: {summary['scenario_mode']}")
     print(f"Threads simulated: {summary['simulated_threads']}")
-    print(f"Mean accuracy: {summary['mean_accuracy']:.3f}")
+    print(
+        "Mean role agreement rate: "
+        f"{summary['mean_role_agreement_rate']:.3f} "
+        "(descriptive reproduction metric; not predictive accuracy)"
+    )
     print(f"Mean escalation score: {summary['mean_escalation_score']:.3f}")
     print(f"Mean defence score: {summary['mean_defence_score']:.3f}")
     print()
