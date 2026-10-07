@@ -29,9 +29,12 @@ Streamlit dashboard
 
 ## Research / legacy implementations
 
-The repository also contains earlier or experimental implementations, including `model.py`, `agents.py`, `rl_module.py`, `tom_module.py`, `memory_module.py`, `behavioral_simulation.py`, and `dataset_behavioral_simulation.py`.
+Earlier implementations are now separated from the canonical runtime:
 
-These files document the evolution of the project, but they should not be treated as the primary production path.
+- `legacy/label_conditioned/` contains the earlier role-label-conditioned simulation stack.
+- `experiments/prototypes/` contains exploratory models, dashboards, manual tests, and reward experiments.
+
+These files document the evolution of the project, but they should not be treated as the primary portfolio runtime path.
 
 One important distinction is that the legacy dataset-conditioned simulator uses observed CYBY23 role labels as part of agent initialization. Its role-agreement metric is therefore a **descriptive reproduction measure**, not an independent predictive accuracy estimate.
 
