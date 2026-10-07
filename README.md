@@ -177,6 +177,29 @@ This allows conclusions to be phrased as distributions rather than one-off outco
 
 See [docs/SENSITIVITY_ANALYSIS.md](docs/SENSITIVITY_ANALYSIS.md).
 
+## What the Sensitivity Analysis Found
+
+The existing repeated-run experiments also exposed an important calibration limitation.
+
+Under the standard dashboard settings, the model is strongly escalation-dominant:
+
+- balanced baseline: **100% escalation across 40 runs**
+- defender-heavy baseline: **100% escalation across 40 runs**
+- high-harm context: escalation in about **1.9 steps on average**
+
+However, targeted low-harm experiments show that defender dominance can reverse the simulated outcome:
+
+- 80% defenders + low harm: **74% calming across 50 runs**
+- 90% defenders + low harm: **92% calming**
+- 80% defenders + toxicity 0: **100% calming**
+- 80% defenders + toxicity 50+: **100% escalation**
+
+This demonstrates that toxicity is a dominant driver in the current calibration and that defender effects become strong mainly in lower-harm environments.
+
+These results are treated as a **model calibration audit**, not a claim about real-world causality.
+
+See [docs/CALIBRATION_FINDINGS.md](docs/CALIBRATION_FINDINGS.md) and the historical sensitivity report in `sensitivity_outputs/`.
+
 ## Automated Testing
 
 The repository includes unit tests for important invariants, including:
