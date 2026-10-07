@@ -1,7 +1,0 @@
-pandas>=2.2
-numpy>=1.26
-mesa>=3.5
-matplotlib>=3.8
-openpyxl>=3.1
-networkx>=3.3
-streamlit>=1.55
