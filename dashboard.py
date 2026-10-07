@@ -319,19 +319,19 @@ with left_col:
         load_dataset_defaults()
 
     st.selectbox(
-        "CYBY23 learning filter",
+        "CYBY23 calibration filter",
         ["all", "low", "medium", "high"],
         key="dataset_risk_filter",
-        help="Choose which CYBY23 thread risk group the simulation should learn from.",
+        help="Choose which CYBY23 thread risk group should provide aggregate calibration priors.",
     )
     st.slider(
-        "CYBY23 learning strength",
+        "CYBY23 calibration strength",
         0.0,
         2.0,
         key="dataset_learning_strength",
         help="Controls how strongly observed CYBY23 role patterns bias the agents' starting behaviour.",
     )
-    if st.button("Learn Behaviour From CYBY23", use_container_width=True):
+    if st.button("Calibrate From CYBY23", use_container_width=True):
         learn_from_cyby23_dataset()
 
     if st.session_state["dataset_profile"] is not None:
