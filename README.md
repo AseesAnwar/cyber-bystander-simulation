@@ -1,96 +1,199 @@
-# Cyber-Bystander Simulation Prototype
+# Cyber-Bystander Agent-Based Simulation
 
-## Project Summary
+[![Python tests](https://github.com/AseesAnwar/cyber-bystander-simulation/actions/workflows/tests.yml/badge.svg)](https://github.com/AseesAnwar/cyber-bystander-simulation/actions/workflows/tests.yml)
 
-This repository contains an early-stage research prototype for simulating cyber-bystander behaviour in harmful online conversations. The project uses the CYBERBYSTANDER (CYBY23) dataset and the Mesa agent-based modelling framework to compare real labelled reply behaviour with simulated reply behaviour.
+An explainable agent-based modelling project that explores how different bystander roles can influence the escalation or de-escalation of harmful online conversations.
 
-The prototype is designed for a university audience: it is simple enough to explain in a presentation, but structured clearly enough to support future research extensions.
+The project uses Python, Mesa, Streamlit, and the CYBERBYSTANDER (CYBY23) dataset to build configurable social simulations around four bystander roles:
 
-## What The Simulation Does
+- **Instigator** — supports or amplifies harmful behaviour
+- **Defender** — pushes back and supports the victim
+- **Neutral** — observes or stays silent
+- **Other** — participates without materially affecting the conflict
 
-The simulator treats each online conversation as a sequence:
+This is an **exploratory simulation**, not a prediction product or causal model of human behaviour.
 
-1. a harmful or hostile original post appears
-2. people reply to that conversation
-3. each replying agent chooses one of four actions:
-   - support the harmful post (`reinforce`)
-   - push back against it (`defend`)
-   - stay neutral (`neutral`)
-   - say something unrelated (`unrelated`)
+## What This Project Demonstrates
 
-The model can run in two modes:
+- Agent-based modelling with Mesa
+- Python simulation design
+- Dataset preprocessing and role normalization
+- Streamlit interactive dashboards
+- ToM-inspired social-context reasoning
+- Reward-based agent adaptation
+- Persistent learning across repeated runs
+- Reproducible random-seed experiments
+- Sensitivity analysis
+- Automated unit tests and GitHub Actions CI
+- Transparent documentation of modelling assumptions and limitations
 
-- baseline rule-based mode
-- simplified learning mode with Theory of Mind (ToM), Reinforcement Learning (RL), and Continual Learning (CL)
+## Core Research Question
 
-## Why This Matters For Cyber-Bystander Behaviour
+> How can the composition and behaviour of online bystanders influence whether a harmful conversation escalates, de-escalates, or remains unresolved?
 
-Cyber-bystander behaviour is important because harmful online discussions are shaped not only by the person who starts them, but also by how others react. Replies can amplify harm, resist harm, remain passive, or ignore the conflict entirely.
+The model supports what-if questions such as:
 
-This project models those bystander reactions in a way that lets us:
+- What happens when defender participation increases?
+- How does a neutral-heavy environment affect escalation?
+- How does higher toxicity change the simulated outcome?
+- How stable is a scenario across many random seeds?
+- How does lightweight learning change behaviour across repeated runs?
 
-- compare model behaviour with real labelled data
-- test whether simple social assumptions produce realistic reply patterns
-- build a transparent baseline before moving to more advanced AI approaches
+## Canonical Architecture
 
-## Connection To The ToM / RL / CL Research Direction
+The portfolio-facing implementation is the Mesa stack below.
 
-This prototype is inspired by research directions that combine:
+```text
+CYBY23 data / scenario inputs
+        ↓
+preprocess_cyby23.py
+        ↓
+mesa_bridge.py
+        ↓
+mesa_model.py
+        ↓
+mesa_agents.py + mesa_learning.py
+        ↓
+Streamlit dashboard
+```
 
-- Theory of Mind: agents infer what is happening socially
-- Reinforcement Learning: agents learn which actions pay off
-- Continual Learning: agents adapt over time instead of resetting completely
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the detailed architecture.
 
-This implementation keeps those ideas intentionally simple and interpretable:
+### Main files
 
-- no deep learning
-- no neural networks
-- no external ML libraries
+- `preprocess_cyby23.py` — loads, cleans, normalizes, and structures CYBY23 data
+- `mesa_agents.py` — defines bystander agent roles and action behaviour
+- `mesa_learning.py` — reward-based adaptation and persistent learning state
+- `mesa_model.py` — canonical Mesa simulation environment
+- `mesa_bridge.py` — interface between the Mesa backend and UI
+- `dashboard.py` — interactive Streamlit simulation
+- `tableau_mesa_dashboard.py` — presentation-oriented dashboard variation
+- `multi_seed_experiment.py` — repeated-run sensitivity analysis
+- `tests/` — automated model and preprocessing tests
 
-Instead, the project uses:
+## How the Simulation Works
 
-- simple mental-state inference from toxicity, sentiment, and visible reply trends
-- tabular Q-learning with dictionary-based Q-tables
-- rolling memory with decay-based forgetting
+Each scenario contains an online bullying environment with one harmful situation and a population of bystander agents.
 
-This makes the project easier to defend in an academic meeting while still showing a credible extension path toward richer learning models.
+At each step:
 
-## Project Structure
+1. agents observe the current environment;
+2. agents respond to role preferences and visible social context;
+3. active agents choose actions;
+4. the overall bullying intensity changes;
+5. reward-based learning updates behavioural tendencies;
+6. the simulation stops when it escalates, calms down, or reaches the maximum number of steps.
 
-- `preprocess_cyby23.py`
-  Loads and cleans the CYBY23 dataset, normalizes labels, and builds conversation records.
-- `agents.py`
-  Defines the source post, moderator, victim, and bystander agents.
-- `tom_module.py`
-  Implements simplified Theory of Mind inference.
-- `rl_module.py`
-  Implements tabular Q-learning and reusable learner profiles.
-- `memory_module.py`
-  Implements rolling memory for continual learning.
-- `model.py`
-  Defines the Mesa conversation model and simulation outputs.
-- `run_simulation.py`
-  Runs batch simulations from the command line and exports results.
-- `dashboard.py`
-  Streamlit dashboard for interactive exploration.
-- `demo.py`
-  Small runnable example script.
+Possible agent actions include:
 
-## Early-Stage Prototype Note
+- support the bully
+- support the victim
+- stay silent
+- step aside
 
-This repository should be treated as an early-stage research prototype rather than a finished production tool. The aim is to support discussion, experimentation, and academic presentation.
+## Dataset Grounding
 
-Current simplifications include:
+The project uses CYBY23 to ground role structure and harmful-content context.
 
-- one reply decision per agent per conversation
-- no deep language modelling
-- no full social network graph
-- simplified rewards and memory rules
-- simplified Theory of Mind rather than a full cognitive architecture
+The preprocessing workflow:
 
-## Setup Instructions
+- cleans dataset rows;
+- normalizes identifiers;
+- maps raw bystander labels into four interpretable roles;
+- identifies source posts and labelled replies;
+- builds conversation-level records;
+- derives scenario context such as toxicity and engagement.
 
-### 1. Create and activate a virtual environment
+The dataset is **not** treated as proof that the simulation reproduces real human behaviour causally.
+
+### Data file
+
+By default the project expects:
+
+```text
+data/CYBERBYSTANDER (CYBY23) dataset.xlsx
+```
+
+You can also provide an explicit path when running preprocessing or other command-line tools.
+
+The source dataset is not included in this public repository unless redistribution permission is confirmed.
+
+## Model Interpretation
+
+The canonical Mesa implementation is designed as a transparent **what-if model**.
+
+Several coefficients are deliberately heuristic, including:
+
+- role participation probabilities
+- content-pressure weights
+- defender and instigator pressure
+- silence effects
+- reward functions
+- learning and memory strengths
+
+These are modelling assumptions, not estimated causal coefficients.
+
+See:
+
+- [docs/PARAMETERS.md](docs/PARAMETERS.md)
+- [docs/MODEL_LIMITATIONS.md](docs/MODEL_LIMITATIONS.md)
+
+## Important Evaluation Clarification
+
+An earlier research implementation in this repository used observed CYBY23 role labels to help parameterize agents and then compared simulated actions against those same role labels.
+
+That metric is now called **role agreement rate**, not accuracy.
+
+It should be interpreted only as a descriptive reproduction measure because the observed role label contributes to the simulated behaviour. It is **not out-of-sample predictive accuracy**.
+
+The canonical Mesa simulation is therefore evaluated primarily through:
+
+- behaviour under controlled scenarios;
+- reproducibility with fixed seeds;
+- repeated-run sensitivity;
+- outcome distributions;
+- parameter sensitivity;
+- transparent inspection of agent rules.
+
+## Multi-Seed Sensitivity Analysis
+
+One stochastic run is not treated as sufficient evidence.
+
+The project includes:
+
+```bash
+python multi_seed_experiment.py --runs 100 --start-seed 1
+```
+
+This repeats one scenario across many random seeds and reports:
+
+- mean final bullying intensity
+- standard deviation
+- escalation rate
+- calming rate
+- unresolved rate
+
+This allows conclusions to be phrased as distributions rather than one-off outcomes.
+
+See [docs/SENSITIVITY_ANALYSIS.md](docs/SENSITIVITY_ANALYSIS.md).
+
+## Automated Testing
+
+The repository includes unit tests for important invariants, including:
+
+- role percentages convert to the requested population size
+- base behavioural preferences remain valid probability distributions
+- positive rewards increase learned action values
+- identical seeds reproduce the same simulation path
+- bullying intensity remains bounded between 0 and 100
+- CYBY23 role labels normalize correctly
+- missing dataset paths raise clear errors
+
+GitHub Actions runs these tests automatically on pushes and pull requests.
+
+## Setup
+
+### 1. Create a virtual environment
 
 ```bash
 python3 -m venv .venv
@@ -103,97 +206,86 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Provide the dataset
+The dependency file constrains major versions to reduce accidental breakage from future package releases.
 
-The expected default dataset path is:
-
-```text
-/mnt/data/CYBERBYSTANDER (CYBY23) dataset.xlsx
-```
-
-If that path does not exist, the scripts will use the local fallback path configured in the preprocessing module when available.
-
-## How To Run The Project Locally
-
-### Run preprocessing only
-
-```bash
-python3 preprocess_cyby23.py --dataset-path "/mnt/data/CYBERBYSTANDER (CYBY23) dataset.xlsx"
-```
-
-### Run the baseline simulation
-
-```bash
-python3 run_simulation.py --dataset-path "/mnt/data/CYBERBYSTANDER (CYBY23) dataset.xlsx"
-```
-
-### Run the learning-enabled simulation
-
-```bash
-python3 run_simulation.py --dataset-path "/mnt/data/CYBERBYSTANDER (CYBY23) dataset.xlsx" --learning-mode
-```
-
-### Launch the Streamlit dashboard
+## Run the Dashboard
 
 ```bash
 streamlit run dashboard.py
 ```
 
-### Run the demo script
+For the presentation-oriented interface:
 
 ```bash
-python3 demo.py
+streamlit run tableau_mesa_dashboard.py
 ```
 
-## Dashboard Overview
-
-The Streamlit dashboard is intended for presentations and academic walkthroughs. It includes:
-
-- plain-English explanation of the model
-- comparison of real reply behaviour and predicted reply behaviour
-- example conversation walkthrough
-- optional learning mode visualizations
-- advanced tables for technical inspection
-
-## Screenshots
-
-Add screenshots here after publishing the project.
-
-- `[Screenshot placeholder: dashboard home view]`
-- `[Screenshot placeholder: learning mode view]`
-- `[Screenshot placeholder: example conversation walkthrough]`
-
-## Requirements
-
-The project currently depends on:
-
-- Python 3.12+
-- pandas
-- numpy
-- mesa
-- matplotlib
-- openpyxl
-- networkx
-- streamlit
-
-Install all requirements with:
+## Run Tests
 
 ```bash
-pip install -r requirements.txt
+python -m unittest discover -s tests -v
 ```
 
-## How To Share This Project
+## Run a Multi-Seed Experiment
 
-Once this repository is pushed to a public GitHub repository, anyone with the GitHub link can view the code, README, and project files in their browser.
+```bash
+python multi_seed_experiment.py --runs 100
+```
 
-If the repository is public:
+Run-level results are exported to:
 
-- instructors can open the link directly
-- teammates can clone the repository locally
-- anyone with the link can inspect the code without needing local access to your machine
+```text
+outputs/multi_seed_results.csv
+```
 
-Note that the dataset itself may need to be shared separately if you do not include it in the repository.
+## Repository Documentation
+
+```text
+docs/
+├── ARCHITECTURE.md
+├── MODEL_LIMITATIONS.md
+├── PARAMETERS.md
+├── SENSITIVITY_ANALYSIS.md
+└── archive/
+    └── historical project notes, proposals, prompt logs, and handoff material
+```
+
+Historical university-development material is retained for transparency but moved out of the repository root so the canonical implementation is easy to identify.
+
+## Research and Legacy Code
+
+The project evolved through several modelling approaches.
+
+Files such as `model.py`, `agents.py`, `rl_module.py`, `tom_module.py`, `memory_module.py`, `behavioral_simulation.py`, and `dataset_behavioral_simulation.py` represent earlier research iterations or supporting experiments.
+
+They are retained to show development history but are **not the canonical runtime architecture**.
+
+## Current Limitations
+
+- behavioural coefficients are heuristic rather than causally estimated;
+- CYBY23 grounds scenarios but does not validate exact simulated trajectories;
+- social networks are simplified;
+- ToM is an interpretable approximation rather than a complete cognitive architecture;
+- learning is lightweight reward adaptation rather than deep reinforcement learning;
+- stronger empirical calibration and held-out validation would be needed before making predictive claims.
+
+These limitations are deliberate and documented rather than hidden.
+
+## Future Improvements
+
+- expand multi-seed sensitivity experiments across scenario grids;
+- add confidence intervals and parameter-sensitivity visualizations;
+- calibrate selected parameters against aggregate held-out statistics;
+- add network topology to represent repeated social relationships;
+- add portfolio screenshots of the dashboard and simulation outputs;
+- package the canonical model into a cleaner `src/` module structure.
+
+## Project Background
+
+This project began as a university applied research project and has been progressively refactored into a more reproducible and recruiter-readable portfolio project.
+
+The focus is not on claiming that a simulation can predict human behaviour. The value of the project is in building a transparent computational environment where assumptions can be changed, repeated, tested, and explained.
 
 ## License
 
-This project is released under the MIT License. See the `LICENSE` file for details.
+MIT License.
