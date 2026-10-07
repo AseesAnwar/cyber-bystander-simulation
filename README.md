@@ -256,9 +256,13 @@ Historical university-development material is retained for transparency but move
 
 The project evolved through several modelling approaches.
 
-Files such as `model.py`, `agents.py`, `rl_module.py`, `tom_module.py`, `memory_module.py`, `behavioral_simulation.py`, and `dataset_behavioral_simulation.py` represent earlier research iterations or supporting experiments.
+Earlier research code has been separated from the canonical implementation:
 
-They are retained to show development history but are **not the canonical runtime architecture**.
+- `legacy/label_conditioned/` — the older label-conditioned simulator and its descriptive role-agreement workflow
+- `experiments/prototypes/` — exploratory dashboards, behaviour prototypes, manual tests, and reward-design experiments
+- `docs/archive/` — historical proposals, prompt logs, progress notes, and assignment material
+
+These files are retained for transparency and development history but are **not the canonical runtime architecture**.
 
 ## Current Limitations
 
