@@ -21,7 +21,7 @@ class ThreadSimulationResult:
     escalation_score: float
     defence_score: float
     moderator_triggered: bool
-    accuracy: float
+    role_agreement_rate: float
     learning_mode: bool
     average_q_values: dict[str, float]
     mean_reward: float
@@ -220,7 +220,7 @@ class CyberBystanderThreadModel(Model):
         for bystander in self.bystander_agents:
             if bystander.last_action == bystander.role_tendency:
                 matched += 1
-        accuracy = matched / max(1, self.total_bystanders)
+        role_agreement_rate = matched / max(1, self.total_bystanders)
 
         return ThreadSimulationResult(
             thread_id=self.thread_record.thread_id,
@@ -231,7 +231,7 @@ class CyberBystanderThreadModel(Model):
             escalation_score=self.escalation_score,
             defence_score=self.defence_score,
             moderator_triggered=self.moderator.triggered,
-            accuracy=round(float(accuracy), 4),
+            role_agreement_rate=round(float(role_agreement_rate), 4),
             learning_mode=self.learning_mode,
             average_q_values=self.average_q_values,
             mean_reward=self.mean_reward,
