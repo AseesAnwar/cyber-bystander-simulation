@@ -86,8 +86,13 @@ def initialize_state() -> None:
 
 
 def load_dataset_defaults() -> None:
-    threads = load_thread_records_from_state()
+    try:
+        threads = load_thread_records_from_state()
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        st.warning(f"CYBY23 dataset could not be loaded: {exc}")
+        return
     if not threads:
+        st.warning("No CYBY23 conversations were available to load.")
         return
     rng = random.Random(st.session_state["random_seed"])
     thread = rng.choice(threads)
@@ -122,7 +127,11 @@ def load_thread_records_from_state():
 
 
 def learn_from_cyby23_dataset() -> None:
-    threads = load_thread_records_from_state()
+    try:
+        threads = load_thread_records_from_state()
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        st.warning(f"CYBY23 dataset could not be loaded: {exc}")
+        return
     profile = build_cyby23_learning_profile(
         threads,
         risk_filter=st.session_state["dataset_risk_filter"],
@@ -265,15 +274,23 @@ def render_outcome_card(result) -> None:
     )
 
 
-def dataset_note(dataset_path: str) -> tuple[str, str]:
-    resolved_path = resolve_dataset_path(dataset_path)
-    raw_df = load_raw_dataset(resolved_path)
-    cleaned_df = clean_dataset(raw_df)
-    summary = preprocessing_summary(cleaned_df)
+def dataset_note(dataset_path: str) -> tuple[str | None, str]:
+    try:
+        resolved_path = resolve_dataset_path(dataset_path)
+        raw_df = load_raw_dataset(resolved_path)
+        cleaned_df = clean_dataset(raw_df)
+        summary = preprocessing_summary(cleaned_df)
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        return (
+            None,
+            "CYBY23 is not currently loaded. Manual what-if simulation remains available. "
+            f"Dataset-specific calibration is disabled until a valid file is provided ({exc}).",
+        )
+
     message = (
         f"The dashboard is connected to the CYBY23 dataset, which contains `{summary['source_posts']}` online discussion starters and `{summary['labelled_bystander_replies']}` labelled replies. "
-        "The dataset shows what kinds of bystanders appear in real online discussions. "
-        "The extra learning layers here help simulate how behaviour may change with experience."
+        "The dataset provides aggregate role patterns and harmful-content context for calibration. "
+        "It is not used as evidence of independent predictive accuracy."
     )
     return str(resolved_path), message
 
